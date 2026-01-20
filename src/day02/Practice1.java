@@ -1,15 +1,17 @@
-public class practice1 { // 현재 클래스가 위치한 폴더명
+package day02;
+
+public class Practice1 { // 현재 클래스가 위치한 폴더명
     public static void main(String[] args) {
 /* 문제 1: 리터럴(Literal)과 기본 출력 함수
 지시: System.out.println() 함수를 사용해서 숫자 25와 문자열 "홍길동"을 각각 다른 줄에 출력 하시오.*/
-    // 1. 리터럴: =상수(;개발언어에서 미리 정해진 값들)
-       System.out.println(25);
-       System.out.println("홍길동");  // 문자열은 "", 문자는 '', 줄바꿈은 """
+        // 1. 리터럴: =상수(;개발언어에서 미리 정해진 값들)
+        System.out.println(25);
+        System.out.println("홍길동");  // 문자열은 "", 문자는 '', 줄바꿈은 """
 
 /* 문제 2: 변수(Variable) 선언과 기본 타입(Type)
 지시: int 타입의 변수 age를 선언하고, 자신의 임의의 나이를 리터럴로 대입한 뒤, 변수 age를 출력해 보세요.*/
-    // 변수 : 하나의 자료를 저장하는 메모리(저장소) 공간
-    int age = 10; // 타입(int) 변수명(age) = 값(10); // 자바는 문장마다 끝에 ; 세미콜론 넣는다.
+        // 변수 : 하나의 자료를 저장하는 메모리(저장소) 공간
+        int age = 10; // 타입(int) 변수명(age) = 값(10); // 자바는 문장마다 끝에 ; 세미콜론 넣는다.
         System.out.println(age);// "age" age문자열이라는 뜻 vs age age키워드라는 뜻
         // 문자열 문자 그 자체 vs 키워드(변수명/함수명/if/for/int등)는 프로그램이(기능포함) 이해하는 단어
 
@@ -20,25 +22,25 @@ public class practice1 { // 현재 클래스가 위치한 폴더명
 키: double 타입의 height
 좌우명: String 타입의 motto*/
 
-    // 3. 변수는 동일한 { } 내 중복 이름이 불가능하다.
-    String name="유재석";           int age2 = 10;
-    double height = 180.2;         String motto = "좌우명";
+        // 3. 변수는 동일한 { } 내 중복 이름이 불가능하다.
+        String name="유재석";           int age2 = 10;
+        double height = 180.2;         String motto = "좌우명";
 
 /* 문제 4: 출력 함수와 문자열 연결
 지시: 문제 3에서 만든 변수들을 System.out.println() 함수와 + 연산자를 사용하여 아래와 같이 한 문장으로 출력하세요.
 예시: 제 이름은 홍길동, 나이는 25세, 키는 175.5cm 입니다.*/
 
-    // 4. + 기호 : (1)+더하기 숫자+숫자 (2)연결 숫자 + 문자
-    System.out.println("제 이름은" + name + "나이는"+ age2 +"세, 키는"+ height+"cm 입니다.");
+        // 4. + 기호 : (1)+더하기 숫자+숫자 (2)연결 숫자 + 문자
+        System.out.println("제 이름은" + name + "나이는"+ age2 +"세, 키는"+ height+"cm 입니다.");
 
 
 /* 문제 5: printf와 서식 지정자(Format Specifier)
 지시: 문제 4의 출력문을 System.out.printf() 함수와 서식 지정자를 사용하도록 수정하세요.
 요구 조건: 키(height)는 서식 지정자를 이용해 소수점 첫째 자리까지만 표시하세요.
 예시: 제 이름은 홍길동, 나이는 25세, 키는 175.5cm 입니다.*/
-    // 형식 printf : 문자열 내 복잡한 수식이나 변수가 들어가는 자리에 형식으로 표현
-    // %d 정수 %f 실수 %s문자열 , %c 문자,   \n 이스케이프/제어 문자
-    System.out.printf("제 이름은  %s, 나이는 %d 세, 키는 %.1fcm 입니다. \n" name, age2, height);
+        // 형식 printf : 문자열 내 복잡한 수식이나 변수가 들어가는 자리에 형식으로 표현
+        // %d 정수 %f 실수 %s문자열 , %c 문자,   \n 이스케이프/제어 문자
+        System.out.printf("제 이름은  %s, 나이는 %d 세, 키는 %.1fcm 입니다. \n" name, age2, height);
 
 /* 문제6: 아래와 같이 이스케이프 문자를 이용하여 콘솔에 출력하는 코드를 작성하시오.
  |\_/|
@@ -74,8 +76,8 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 나이를 입력하세요: 51
 출력 예시:유재석님의 나이는 51세 입니다.
 */
-    // 8. 입력받기 , 준비물
-    Scanner scan = new Scanner(System.in);
+        // 8. 입력받기 , 준비물
+        Scanner scan = new Scanner(System.in);
 
         System.out.print("8] 이름 :  ");     String 이름 = scan.next(); // .next conosole에서 입력받은 자료를 문자열로 반환
         System.out.print("8] 나이 : ");      int 나이 = scan.nextInt(); // .nextInt() console에서 입력받은 자료를 정수로 반환

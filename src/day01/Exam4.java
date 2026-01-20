@@ -1,4 +1,5 @@
-import java.sql.SQLOutput;
+package day01;
+
 import java.util.Scanner;
 
 public class Exam4 { // class s
