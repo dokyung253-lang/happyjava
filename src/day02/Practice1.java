@@ -1,5 +1,7 @@
 package day02;
 
+import java.util.Scanner;
+
 public class Practice1 { // 현재 클래스가 위치한 폴더명
     public static void main(String[] args) {
 /* 문제 1: 리터럴(Literal)과 기본 출력 함수
@@ -40,7 +42,7 @@ public class Practice1 { // 현재 클래스가 위치한 폴더명
 예시: 제 이름은 홍길동, 나이는 25세, 키는 175.5cm 입니다.*/
         // 형식 printf : 문자열 내 복잡한 수식이나 변수가 들어가는 자리에 형식으로 표현
         // %d 정수 %f 실수 %s문자열 , %c 문자,   \n 이스케이프/제어 문자
-        System.out.printf("제 이름은  %s, 나이는 %d 세, 키는 %.1fcm 입니다. \n" name, age2, height);
+        System.out.printf("제 이름은  %s, 나이는 %d 세, 키는 %.1fcm 입니다. \n", name, age2, height);
 
 /* 문제6: 아래와 같이 이스케이프 문자를 이용하여 콘솔에 출력하는 코드를 작성하시오.
  |\_/|
@@ -50,7 +52,7 @@ public class Practice1 { // 현재 클래스가 위치한 폴더명
  ||_/=\\__|
  */
 
-        System.out.println("|\\_/|\n|q p|  /} |n( 0 )\"\"\"\\" \n|"^\"  | \n||_/=\\\\__|" );
+        System.out.println("|\\_/|\n|q p|  /} |n( 0 )\"\"\"\\ \n|\"^\"`  | \n||_/=\\\\__|" );
 
 /* 문제7 : 아래 조건에 3가지의 변수가 주어졌을때. 그림과 같이 printf 이용한 출력 하는 코드를 작성하시오.
 int num = 1;    // 정수 1 를 저장하고 있는 int 타입 'num' 변수 선언
@@ -78,7 +80,6 @@ String content = "안녕하세요!"; // 문자열 "안녕하세요!"를 저장�
 */
         // 8. 입력받기 , 준비물
         Scanner scan = new Scanner(System.in);
-
         System.out.print("8] 이름 :  ");     String 이름 = scan.next(); // .next conosole에서 입력받은 자료를 문자열로 반환
         System.out.print("8] 나이 : ");      int 나이 = scan.nextInt(); // .nextInt() console에서 입력받은 자료를 정수로 반환
         System.out.printf("$s님의 나이는 %d세 입니다.\n", 이름, 나이); // 유재석님의 나이는 51세 입니다.

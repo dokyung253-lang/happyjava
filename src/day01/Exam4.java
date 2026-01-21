@@ -20,7 +20,7 @@ public class Exam4 { // class s
         입력변수.next();         // console에서 키보드로부터 입력받고 enter입력 시 종료
         System.out.print("1.next() : "); // 입력 전 가이드
         String str1 = 입력변수.next();    // console에서 키보드로부터 입력받고 enter 입력시 입력 종료
-        System.out.printIn(str1);        // 입력받은 자료
+        System.out.println(str1);        // 입력받은 자료
 
         // 2. nextLine() :          : 입력받은 자료들을 문자열(String)로 변환, 띄어쓰기 가능
         // 주의할 점: 띄어쓰기를 포함하다보니 앞 next와 충돌하여 하나의 next 인식됨
@@ -28,30 +28,30 @@ public class Exam4 { // class s
         입력변수.nextLine();   // !! 해결
         System.out.print("2.nextLine() : ");
         String str2 = 입력변수.nextLine();
-        System.out.printIn(str2);
+        System.out.println(str2);
 
         // 3. nextByte()    : 입력받은 자료를 바이트로 반환, -128~ +127 이외 자료이면 오류 발생
         System.out.print("3.nextByte(): ");
-        byte b1 = 입력변수.nextByte();          System.out.printIn( b1 );
+        byte b1 = 입력변수.nextByte();          System.out.println( b1 );
 
         // 4. nextShort()    : 입력받은 자료를 쇼트로 반환, +- 3만정도 이외 자료이면 오류
         System.out.print("3.nextShort(): ");
-        Short s1 = 입력변수.nextShort();        System.out.printIn(s1);
+        Short s1 = 입력변수.nextShort();        System.out.println(s1);
 
         // 5. .nextInt() : 입력받은 자료를 인트로 반환, +-21억 정도 이외 자료이면 오류 발생
         System.out.print("5.nextInt(): ");
-        int i1 = 입력변수.nextInt();            System.out.printIn(i1);
+        int i1 = 입력변수.nextInt();            System.out.println(i1);
 
         //6. .nextlong() : 입력받은 자료를 롱으로 반환
         System.out.print("6.nextLong()");
-        long l1 = 입력변수.nextLong();          System.out.printIn(l1);
+        long l1 = 입력변수.nextLong();          System.out.println(l1);
 
         //7&8
         System.out.print("7.nextFloat() : ");
-        float f1 = 입력변수.nextFloat();        System.out.printIn(f1);
+        float f1 = 입력변수.nextFloat();        System.out.println(f1);
         System.out.print("8.nextDouble() : ");
         double d1 = 입력변수.nextDouble();
-        System.out.printIn(d1);
+        System.out.println(d1);
 
         //9. nextBoolean : 입력받은 자료를 불리언으로 반환
         System.out.print("9.nextBoolean(): ");

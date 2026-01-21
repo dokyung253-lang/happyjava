@@ -26,7 +26,7 @@ double z = 3.141592;
 /*문제 3: Scanner를 이용해 사용자의 키를 double 타입(예: 178.5)으로 입력받은 후, 이 값을 int 타입으로 강제 변환하여 "당신의 키는 약 OOOcm 이군요." 라고 정수 부분만 출력하시오.
 입력 예시:키를 입력하세요: 178.5 /  출력 예시:당신의 키는 약 178cm 이군요. */
         // 3. 변수 출력 시 타입변환
-        Scanner scan = new Scanner(System.in) // 입력 객체
+        Scanner scan = new Scanner(System.in);// 입력 객체
         System.out.print("키 : ");  double 키 = scan.nextDouble();
         System.out.println("당신의 키는 약 : "+ (int)키+"cm 이군요.");
 
@@ -46,4 +46,3 @@ double z = 3.141592;
 
 
     }
-}

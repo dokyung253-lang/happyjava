@@ -33,7 +33,9 @@ public class Exam1 {
        short svalue = (short)ivalue;
        byte bvalue = (byte) svalue;  // bvlaue에는 3자료가 들어있다. 손실 발생.
 
-
+       // 1. 데이터 입력 방식 선택 : (1)HTML input (2)prompt (3)Scanner
+       // 2. 처리 로직
+       // 3. 출력 방식 선택 : (1)innerHTML (2)console (3)System.out.print()
 
    }
 
