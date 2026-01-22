@@ -221,20 +221,27 @@ public class practice1 {
             // 3 선택시 : 잔고출력
             // 4 선택시 : 프로그램/무한루프 종료
         // [4] 구현
-        int 잔고 = 0; // for 밖에 선언한 이유는 for 안에 넣으면 계속 0으로 초기화/선언되므로
-        for( ; ; ) {
+        // for 밖에 선언한 이유는 for 안에 넣으면 계속 0으로 초기화/선언 되므로
+        int 잔고= 0;
+        for( ; ; ){
             System.out.println("---------------------------------");
             System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
-            System.out.println("선택> ");
-            Scanner scan = new Scanner(System.in);
-            int ch = scan.nextInt();
-            if (ch == 1) { // 기능1
-                int 입금액 = scan.next();
-                잔고 += 입금액;
-                System.out.println("입금성공");
-            }else if( ch == 2){ // 기능2
-                int 출금액 = scan.next()
+            System.out.print("선택> ");
+            Scanner scan = new Scanner(System.in);  int ch = scan.nextInt(); // 무한입력 // html 다르게 클릭이벤트없음
+            if( ch == 1 ){   // 기능1
+                System.out.print("입금액 : ");   int 입금액 = scan.nextInt();
+                잔고 += 입금액;      System.out.println("입금 성공");
 
+            }else if( ch == 2){ // 기능2
+                System.out.print("출금액 : ");  int 출금액 = scan.nextInt();
+                if( 출금액 <= 잔고 ){ 잔고 -= 출금액;                 System.out.println("출금 성공"); }
+                else{ System.out.println("잔고가 부족합니다.");  }
+
+            }else if( ch == 3 ){ // 기능3
+                System.out.println( 잔고 );
+            }else if( ch == 4 ){ // 기능4
+                System.out.println("프로그램 종료");              break;
+            }
 
         }// for end
         }// main end
