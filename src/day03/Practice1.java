@@ -3,7 +3,7 @@ package day03;
 import java.util.Scanner;
 
 public class Practice1 {
-    public static void main() {
+    public static void main(String[] args) {
 /*[문제 1] Scanner를 이용해 두 개의 점수(int)를 입력받아 총점을 계산하세요.
 총점이 90점 이상이면 '성공'을, 그렇지 않으면 '실패'를 출력하는 프로그램을 작성하시오.
 입력 예시:
@@ -17,9 +17,9 @@ public class Practice1 {
         int point2 = scan.nextInt();
         int 총점 = point1 + point2;
         if (총점 >= 90) {
-            System.out.println("합격");
+            System.out.println("성공");
         } else {
-            System.out.println("불합격");
+            System.out.println("실패");
         }
 
 /*[문제 2] Scanner를 이용해 서로 다른 두 개의 정수를 입력받아, 더 큰 수를 출력하는 프로그램을 작성하시오.
@@ -32,9 +32,9 @@ public class Practice1 {
         System.out.print("2] 두번째 정수: ");
         int 정수2 = scan.nextInt();
         if (정수1 < 정수2) {
-            System.out.println("더 큰 수=" + 정수2);
+            System.out.println("더 큰 수 : " + 정수2);
         } else {
-            System.out.println("더 큰 수=" + 정수1);
+            System.out.println("더 큰 수 : " + 정수1);
         }
 
         ;
@@ -45,9 +45,9 @@ public class Practice1 {
 아이디: admin
 비밀번호: 1234
 출력 예시: 로그인 성공 */
-        System.out.print("3] 아이디");
+        System.out.print("3] 아이디 : ");
         String id = scan.next();
-        System.out.print("3] 비밀번호");
+        System.out.print("3] 비밀번호 : ");
         String pw = scan.next();
         if (id.equals("admin") && pw.equals("1234")) {
             System.out.println("로그인성공");
@@ -111,12 +111,12 @@ viewer: '콘텐츠 조회만 가능합니다.'
         else if(role.equals("viewer")){ System.out.println("콘텐츠 조회만 가능합니다."); }
         else{ System.out.println("정의되지 않은 역할입니다.");}
         // vs 논리 없으면 switch 문법 사용 가능
-        switch (role){
+        /*switch (role){
             case "admin" : System.out.println("모든 기능에 접근할 수 있습니다.");  break;
             case "editor": System.out.println("콘텐츠 수정 및 생성 기능에 접근할 수 있습니다.");  break;
             case "viewer": System.out.println("콘텐츠 조회만 가능합니다."); break;
             default: System.out.println("정의되지 않은 역할입니다.");
-        }
+        }*/
 
 /*[문제 8] Scanner를 이용해 사용자의 나이를 정수로 입력받아, 아래 기준에 따라 입장료를 출력하는 프로그램을 작성하시오.
 8세 미만: '무료'
@@ -220,6 +220,16 @@ viewer: '콘텐츠 조회만 가능합니다.'
 두 번째 정수: 4
 세 번째 정수: 8
 출력 예시: 4, 8, 17 */
+        // [14] 스왑: 두 변수간의 자료 교환, int temp = n1; n1(의 자리에) =n2; n2(의 자리에) = n3;
+        // {} 안에서 선언된 변수는 지역변수 특징을 갖는다.
+        System.out.println("14] n1: "); int n1 = scan.nextInt();
+        System.out.println("14] n2: "); int n2 = scan.nextInt();
+        System.out.println("14] n3: "); int n3 = scan.nextInt();
+        if( n1 > n2 ){int temp= n1; n1=n2; n2=temp;}
+        if( n1 > n3 ){int temp= n1; n1=n3; n3=temp;}
+        if( n2 > n3 ){int temp = n1; n2=n3; n3=temp;}
+        System.out.printf("%d  %d  %d \n", n1, n2, n3 );
+
 
 /*[문제 15] 가위바위보 게임
 지시: 두 명의 플레이어가 참여하는 가위바위보 게임을 만드시오.
@@ -232,6 +242,14 @@ viewer: '콘텐츠 조회만 가능합니다.'
 플레이어1 (0:가위, 1:바위, 2:보): 1
 플레이어2 (0:가위, 1:바위, 2:보): 0
 출력 예시: 플레이어1 승리 */
-
+            //  [활용] 경우의수 찾기 연습
+        // p1(player1) 이기는 수: p1 == 0 && p2 == 2 || p1 == 1 && p2 == 0 || p1 == 3 && p2 == 1
+        // VS  // p1 이기는 수: p1 == (p2 +1) %3 , ex)  (2+1)%3=0
+        // 가위, 바위, 보가 아닌 0, 1, 2로 쓰는 이유: 문자열을 넣으면 .equals()써야 함. >> 이게 더 편함
+        System.out.println("15]가위[0] 바위[1] 보[2] 입력: ");      int p1 = scan.nextInt();
+        System.out.println("15]가위[0] 바위[1] 보[2] 입력: ");      int p2 = scan.nextInt();
+        if( p1 == (p2 +1 )% 3){ System.out.println("플레이어1 승리"); } // if : 플레이어1 이기는 수
+        else if( p1 == p2 ){ System.out.println("무승부"); }
+        else{ System.out.println("플레이어2 승리"); }
     }
 }
