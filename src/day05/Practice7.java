@@ -90,6 +90,16 @@ television1.volume--; television1.volume --;
 1. main 함수에서 Player 객체 2개를 생성하세요.
 2. 첫 번째 객체에는 "손흥민", 90, 95를, 두 번째 객체에는 "이강인", 85, 92를 각각 저장하세요.
 3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.*/
+Player player1 = new Player();
+player1.name = "손흥민"; player1.power = 90; player1.speed = 95;
+Player player2 = new Player();
+player2.name = "이강인"; player2.power = 85; player2.speed = 92;
+int sum1 = player1.power+player1.speed;
+int sum2 = player2.power+player2.speed;
+if( sum1 > sum2 ){System.out.println(player1.name)
+}else{System.out.println(player2.name);}
+
+
 
 /*[문제 9] MenuItem 클래스를 만드세요. name(문자열), price(정수), isSignature(boolean, 대표메뉴 여부) 멤버 변수를 가집니다.
 1. main 함수에서 MenuItem 객체 3개를 생성하고, 첫 번째는 "김치찌개", 8000, true, 두 번째는 "된장찌개", 8000, false, 세 번째는 "계란찜", 3000, false로 저장하세요.
