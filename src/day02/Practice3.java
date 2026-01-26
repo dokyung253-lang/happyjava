@@ -18,7 +18,8 @@ public class Practice3 {
     요구 조건: 원주율은 3.14로 계산합니다. (공식: 반지름 * 반지름 * 3.14)
     입력 예시: 반지름을 입력하세요: 10.5
     출력 예시: 원의 넓이: 346.185 */
-
+        System.out.println("반지름을 입력하시오: ");     double 반지름= scan.nextDouble();
+        double result = 반지름 *반지름* 3.14;
 
     /*[문제 3] Scanner를 이용해 두 개의 실수(double)를 입력받아, 첫 번째 실수가 두 번째 실수의 몇 퍼센트인지 계산하여 출력하시오.
     공식: (첫 번째 실수 / 두 번째 실수) * 100
@@ -170,10 +171,6 @@ public class Practice3 {
         System.out.println("============ 문제 16 ============");
         System.out.print("나이를 입력하세요: ");         int age = scan.nextInt();
         System.out.println(age >= 20 && age <= 29 ? "이벤트 대상입니다." : "이벤트 대상이 아닙니다.");
-
-
-
-
 
     }
 }
