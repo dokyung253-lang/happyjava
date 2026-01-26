@@ -4,42 +4,49 @@ import java.util.Scanner;
 
 public class practice1 {
     public static void main(String[] args) {
-    /*[문제 1] for문을 사용하여 1부터 10까지의 숫자를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.*/
-        for(int n=1; n<=10; n++){
-            System.out.println("1]"+n);
+        /*[문제 1] for문을 사용하여 1부터 10까지의 숫자를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.*/
+        for (int n = 1; n <= 10; n++) {
+            System.out.println("1]" + n);
         }
         /*[문제 2] for문을 사용하여 10부터 1까지의 숫자를 역순으로 출력하는 프로그램을 작성하시오.*/
-        for(int q=10; q>=10; q--){
-            System.out.println("2]"+q);
+        for (int q = 10; q >= 10; q--) {
+            System.out.println("2]" + q);
         }
         /*[문제 3] for문을 사용하여 1부터 50까지 모든 정수의 합계를 구하여 최종 결과를 출력하시오., 출력 예시: 1부터 50까지의 합계: 1275*/
         int sum = 0;// 모든 합계를 저장하는 변수 선언
-        for(int w=1; w<=50; w++){ sum += w;}
-            System.out.println("3]sum="+ sum);
+        for (int w = 1; w <= 50; w++) {
+            sum += w;
+        }
+        System.out.println("3]sum=" + sum);
 
         /*[문제 4] for문과 if문을 사용하여, 1부터 20까지의 숫자 중 짝수만 출력하는 프로그램을 작성하시오.*/
-        for(int i=1; i<=20; i++){ if(i % 2 == 0){System.out.println("4]"+i);} // 짝수란 : 값 % 2 == 0
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                System.out.println("4]" + i);
+            } // 짝수란 : 값 % 2 == 0
 
-        /*[문제 5] 1부터 30까지의 숫자 중, 3의 배수는 건너뛰고 나머지 숫자만 출력하는 프로그램을 작성하시오, 요구 조건: continue 문을 반드시 사용하시오.*/
-        // 초기값: 1, 조건문: 30까지, 증감식: 모든숫자중 3배수는 건너뛰기
-            for(int i2= 1; i2<= 30; i2++) {
+            /*[문제 5] 1부터 30까지의 숫자 중, 3의 배수는 건너뛰고 나머지 숫자만 출력하는 프로그램을 작성하시오, 요구 조건: continue 문을 반드시 사용하시오.*/
+            // 초기값: 1, 조건문: 30까지, 증감식: 모든숫자중 3배수는 건너뛰기
+            for (int i2 = 1; i2 <= 30; i2++) {
                 if (i2 % 3 == 0) { // 배수란? 값%수 ==0, 나머지가 0이면 값은 그 수의 배수
                     continue;     // 가장 가까운 for의 증감식(i++)으로 이동
                 }
-                System.out.println("5]"+i2); // countinue 만나지 않았다.
+                System.out.println("5]" + i2); // countinue 만나지 않았다.
             }
 
         /*[문제 6] 1부터 순서대로 숫자를 더해나갈 때, 합계가 처음으로 100을 초과하는 시점의 숫자와 그때까지의 합계를 출력하고 반복문을 즉시 종료하시오.
         요구 조건: break 문을 반드시 사용하시오.
         출력 예시:14까지 더했을 때 합계가 105로 100을 넘습니다.*/
             // 초기값: 1, 조건문 : 생략, 증감식: 1씩 증가
-        int sum2 = 0; // 모든 값을 저장하는 변수 // 변수명 중복으로 sum2로 작성
-        int num;
-        for( num=1; ; num++){ // int num은 1부터 무한으로 1씩 증가 // 조건생략시 무한루프
-            sum2 += num; // sum2 변수에 num 누적합계(+=)
-            if(sum2 > 100){break;} // 만약에 누적합계가 100초과이면
+            int sum2 = 0; // 모든 값을 저장하는 변수 // 변수명 중복으로 sum2로 작성
+            int num;
+            for (num = 1; ; num++) { // int num은 1부터 무한으로 1씩 증가 // 조건생략시 무한루프
+                sum2 += num; // sum2 변수에 num 누적합계(+=)
+                if (sum2 > 100) {
+                    break;
+                } // 만약에 누적합계가 100초과이면
             }// for end
-            System.out.println("6]sum2 = "+ sum2); // sout+v 자동완성
+            System.out.println("6]sum2 = " + sum2); // sout+v 자동완성
 
         /*[문제 7] 중첩 for문을 사용하여 아래와 같이 별(*)로 이루어진 직각삼각형을 출력하시오.
         출력 예시:
@@ -50,22 +57,22 @@ public class practice1 {
         *****
         */
 
-        for( int 단 = 1; 단 <= 5; 단++){
-            for(int 곱 =1; 곱 <= 5; 곱++){
-                System.out.printf("%d * %d", 단, 곱);
+            for (int 단 = 1; 단 <= 5; 단++) {
+                for (int 곱 = 1; 곱 <= 5; 곱++) {
+                    System.out.printf("%d * %d", 단, 곱);
+                }
+                System.out.println(); // 단마다 줄바꿈
             }
-            System.out.println(); // 단마다 줄바꿈
-        }
 //      *       1       1부터 1까지(i까지)
 //      **      2       1부터 2까지(i까지)
 //      ***     3       1부터 3까지(i까지)
 //      ****    4       1부터 4까지(i까지)
 //      *****   5       1부터 5까지(i까지)
-       // i는 1 부터 5까지 1씩 증가
-       // s는 1 부터 i까지 1씩 증가
-        for(int r= 1; r<=5; r++){
-            System.out.print("*"); // print() 줄바꿈 포함 안됨
-        }
+            // i는 1 부터 5까지 1씩 증가
+            // s는 1 부터 i까지 1씩 증가
+            for (int r = 1; r <= 5; r++) {
+                System.out.print("*"); // print() 줄바꿈 포함 안됨
+            }
             System.out.println(); // 행/줄/i마다 줄바꿈 포함
 
         /*[문제 8] 중첩 for문을 사용하여 아래와 같이 별(*)로 이루어진 역직각삼각형을 출력하시오.
@@ -76,10 +83,10 @@ public class practice1 {
         **          4 * *            1부터 2까지 (전체줄수 - 현재줄수+1)
         *           5 *              1부터 1까지 (전체줄수 - 현재줄수+1)
         */
-        // i/행/줄 는 1부터 5이하까지 1씩 증가한다.
-        // s/열/별 는 1부터 (전체줄수 = 현재줄수+1) 이하까지 1씩 증가한다.
-            for(int e = 1; e <= 5; e++){
-                for(int s = 1; s <= 5-i+1; s++ ){
+            // i/행/줄 는 1부터 5이하까지 1씩 증가한다.
+            // s/열/별 는 1부터 (전체줄수 = 현재줄수+1) 이하까지 1씩 증가한다.
+            for (int e = 1; e <= 5; e++) {
+                for (int s = 1; s <= 5 - i + 1; s++) {
                     System.out.println("*"); // print 줄바꿈 안된다
                 }
                 System.out.println(); // println 줄바꿈한다.
@@ -112,16 +119,18 @@ public class practice1 {
              */
 
             // (3) 무한루프 종료 조건 : "end" 입력 시
-            int count= 0; // 입력받은 개수 변수
-            for (;;) {
+            int count = 0; // 입력받은 개수 변수
+            for (; ; ) {
                 Scanner scan = new Scanner(System.in);
                 System.out.print("입력 : ");
                 String str = scan.next();
-                if (str.equals("end")){break;}
+                if (str.equals("end")) {
+                    break;
+                }
                 count++; // 입력받은 개수 1증가 (증감연산자)
             }
             System.out.println("count = " + count);
-            }
+        }
 
 
 
@@ -140,31 +149,35 @@ public class practice1 {
         2주차 : ■■■■■■■■■912만원
         3주차 : ■■■■■518만원
         4주차 : ■■■■■■■■■■■1173만원 */
-        int july1 = 3532100;         int july2 = 9123700;
-        int july3 = 5183400;         int july4 = 11738700;
+        int july1 = 3532100;
+        int july2 = 9123700;
+        int july3 = 5183400;
+        int july4 = 11738700;
         //(1) 만원단위로 변경/ 수정
-        july1 = july1/10000;         july2 = july2/10000;
-        july3 = july3/10000;         july4 = july4/10000;
+        july1 = july1 / 10000;
+        july2 = july2 / 10000;
+        july3 = july3 / 10000;
+        july4 = july4 / 10000;
         // (2) 백만원 1개당 '■' 1개 출력 반복문
-        for( int i = 1; i <= july1/100; i++){
+        for (int i = 1; i <= july1 / 100; i++) {
             System.out.print("■");
         }
-        System.out.println( july1+"만원");
+        System.out.println(july1 + "만원");
 
-        for( int i = 1; i <= july2/100; i++){
+        for (int i = 1; i <= july2 / 100; i++) {
             System.out.print("■");
         }
-        System.out.println( july2+"만원");
+        System.out.println(july2 + "만원");
 
-        for( int i = 1; i <= july3/100; i++){
+        for (int i = 1; i <= july3 / 100; i++) {
             System.out.print("■");
         }
-        System.out.println( july3+"만원");
+        System.out.println(july3 + "만원");
 
-        for( int i = 1; i <= july4/100; i++){
+        for (int i = 1; i <= july4 / 100; i++) {
             System.out.print("■");
         }
-        System.out.println( july4+"만원");
+        System.out.println(july4 + "만원");
 
         /*[문제 11] Scanner와 for(;;) 무한루프를 사용하여 간단한 ATM 기기를 만드시오.
         요구 조건:
@@ -205,44 +218,56 @@ public class practice1 {
         System.out.println("선택> 2");
         System.out.println("입금액> 10000");
         System.out.println("---------------------------------");
-            // 1. -> 청사진에서 반복되는 화면이 있다. ---> 반복문으로 변경
-            // 2. -> 1 / 3 / 4 입력받은 자료
-         for( ; ; ){
+        // 1. -> 청사진에서 반복되는 화면이 있다. ---> 반복문으로 변경
+        // 2. -> 1 / 3 / 4 입력받은 자료
+        int 잔고 = 0;
+         /*for( ; ; ){
              System.out.println("---------------------------------");
              System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
              System.out.println("선택> ");
-             Scanner scan = new Scanner(System.in);     int ch = scan.nextInt();     // 무한입력 // html 다르게 클릭이벤트 없음
-            }
+             Scanner scan = new Scanner(System.in);
+             int ch = scan.nextInt();     // 무한입력 // html 다르게 클릭이벤트 없음
+            }*/
         // [2] 데이터 설계: 그 회면에서 필요한 데이터/ 저장 (ex. 엑셀/표)
-           // 모든 화면에서 공용/누적 사용하는 저장 값 = 잔고
+        // 모든 화면에서 공용/누적 사용하는 저장 값 = 잔고
         // [3] 기능 설계: 그 화면에서 버튼/이벤트 했을 때 무엇을 넣을지
-            // 1 선택시 : 입력받은 값을 잔고에 +=
-            // 2 선택시 : 입력받은 값을 잔고에 -=, 단,
-            // 3 선택시 : 잔고출력
-            // 4 선택시 : 프로그램/무한루프 종료
+        // 1 선택시 : 입력받은 값을 잔고에 +=
+        // 2 선택시 : 입력받은 값을 잔고에 -=, 단,
+        // 3 선택시 : 잔고출력
+        // 4 선택시 : 프로그램/무한루프 종료
         // [4] 구현
         // for 밖에 선언한 이유는 for 안에 넣으면 계속 0으로 초기화/선언 되므로
-        int 잔고= 0;
-        for( ; ; ){
+
+        for (; ; ) {
             System.out.println("---------------------------------");
             System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
             System.out.print("선택> ");
-            Scanner scan = new Scanner(System.in);  int ch = scan.nextInt(); // 무한입력 // html 다르게 클릭이벤트없음
-            if( ch == 1 ){   // 기능1
-                System.out.print("입금액 : ");   int 입금액 = scan.nextInt();
-                잔고 += 입금액;      System.out.println("입금 성공");
+            Scanner scan = new Scanner(System.in);
+            int ch = scan.nextInt(); // 무한입력 // html 다르게 클릭이벤트없음
+            if (ch == 1) {   // 기능1
+                System.out.print("입금액 : ");
+                int 입금액 = scan.nextInt();
+                잔고 += 입금액;
+                System.out.println("입금 성공");
 
-            }else if( ch == 2){ // 기능2
-                System.out.print("출금액 : ");  int 출금액 = scan.nextInt();
-                if( 출금액 <= 잔고 ){ 잔고 -= 출금액;                 System.out.println("출금 성공"); }
-                else{ System.out.println("잔고가 부족합니다.");  }
+            } else if (ch == 2) { // 기능2
+                System.out.print("출금액 : ");
+                int 출금액 = scan.nextInt();
+                if (출금액 <= 잔고) {
+                    잔고 -= 출금액;
+                    System.out.println("출금 성공");
+                } else {
+                    System.out.println("잔고가 부족합니다.");
+                }
 
-            }else if( ch == 3 ){ // 기능3
-                System.out.println( 잔고 );
-            }else if( ch == 4 ){ // 기능4
-                System.out.println("프로그램 종료");              break;
-            }
-
-        }// for end
+            } else if (ch == 3) { // 기능3
+                System.out.println(잔고);
+            } else if (ch == 4) { // 기능4
+                System.out.println("프로그램 종료");
+                break;
+            } else {
+                System.out.println("잘못된 선택입니다.");
+            }// for end
         }// main end
-    } // class end
+    }
+}

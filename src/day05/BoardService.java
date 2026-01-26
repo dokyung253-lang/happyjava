@@ -36,7 +36,7 @@ public class BoardService { // 자바는 클래스 단위로 실행한다.
                     writer3 = 작성자;
                     System.out.println("[안내] 글쓰기 성공");
                 }else{
-                    System.out.println("[경고] 게시물 등록할 공간이 없습니다.");
+                    System.out.println("[경고] 게시물 등록할 공간이 없습니다.");}
             } // if end
             else if(ch == 2) { // 입력받은 값이 2 이면
                     if (content1 == null && writer1 != null) { //만약에 첫번째 게시물이 비어있지 않으면 출력
