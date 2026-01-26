@@ -25,26 +25,28 @@ public class BoardService { // 자바는 클래스 단위로 실행한다.
                 scan.nextLine();
                 System.out.print("내용 : ");   String 내용 = scan.nextLine();
                 System.out.print("작성자 :");   String 작성자= scan.nextLine(); // 입력받기
-                if(content1 == null && writer1 = null){ // 첫번째 게시물이 비어있으면 // null이면 비어있다는 뜻
+                if(content1 == null && writer1 == null){ // 첫번째 게시물이 비어있으면 // null이면 비어있다는 뜻
                     content1 = 내용; writer1 = 작성자; //변수의 수정
                 }else if( content2 == null && writer2 == null){
                     content2 = 내용;
                     writer2 = 작성자;
+                    System.out.println("[안내] 글쓰기 성공");
                 }else if( content3 == null && writer3 == null){
                     content3 = 내용;
                     writer3 = 작성자;
+                    System.out.println("[안내] 글쓰기 성공");
                 }else{
                     System.out.println("[경고] 게시물 등록할 공간이 없습니다.");
             } // if end
-                else if(ch == 2) { // 입력받은 값이 2 이면
+            else if(ch == 2) { // 입력받은 값이 2 이면
                     if (content1 == null && writer1 != null) { //만약에 첫번째 게시물이 비어있지 않으면 출력
-                        System.out.printf("작성자 : %s \n , content1, writer1");
+                        System.out.printf("작성자 : %s \n, 내용: content1, writer1");
                     }
                     if(content2 !=  null && writer2 != null) {
-                        System.out.printf("작성자 : %s \n , content2, writer2");
+                        System.out.printf("작성자 : %s \n, 내용: content2, writer2");
                     }
                     if(content2 !=  null && writer2 != null){
-                        System.out.printf("작성자 : %s \n , content3, writer3");
+                        System.out.printf("작성자 : %s \n, 내용: content3, writer3");
                     }
                 }// else if end
         } // for end
