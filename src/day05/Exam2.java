@@ -21,15 +21,34 @@ public class Exam2 {
         // (2) new 클래스명(); // 생성자, new 뒤로 생성자 == 클래스명 동일하며 ()인자값 갖는다.
         // (3) 클래스명 변수명 = new 클래스명(); // 객체생성 : 동일한 클래스/타입 명으로 변수 선언하여 저장한다.
         Student s1 = new Student();
-        System.out.println("s1 = " + s1); // day05.Student@776ec8df 저장된 위치/주소
-        
-        
+        System.out.println("s1 = " + s1); // (실행 시,) day05.Student@776ec8df : 객체가 저장된 위치/주소
+        // 객체 사용
+        // (4) 객체변수명.멤버변수       :   멤버변수 값 호출
+        // (5) 객체변수명.멤버변수 = 새로운값 : 멤버변수 값 수정
+        System.out.println("s1.studentID = " + s1.studentID); // 0 // sout+v+enter
+        System.out.println("s1.studnetName = " + s1.studentName); // null // 멤버변수와 배열은 임의의 초기값 존재
+        s1.studentID = 10;          // 객체변수명.멤버변수 = 새로운값
+        s1.studentName = "유재석";
+        System.out.println("s1.studentID = " + s1.studentID); // sout+v +키보드오른쪽방향키+.
+        // 예시2
+        // 붕어빵 객체를 설계: 1) 속성(요소): 내용물 , 가격   2) 기능(함수, 동사): 굽기, 뒤집기
+        붕어빵틀 붕어빵1 = new 붕어빵틀(); // 객체 생성
+        System.out.println("붕어빵1 = "+ 붕어빵1);
+            붕어빵1.내용물 "팥"; 붕어빵1.가격 = 1000;
+        붕어빵틀 붕어빵2 = new 붕어빵틀(); // 객체 생성
+        System.out.println("붕어빵2 = "+ 붕어빵2);
+            붕어빵2.내용물 "슈크림"; 붕어빵2.가격 = 1500;
+        // * 동일한 클래스는 1개이고 두개의 붕어빵(객체) 서로 다르다.
+        // * 동일한 객체 타입/클래스를 여러개 저장한다. -> 배열
+        // 서로다른 타입/클래스 --> 새로운 클래스 정의
+        // 서로 같은 타입/클래스 --> 배열 정의
+        붕어빵틀[] 붕어빵봉지 = {붕어빵1, 붕어빵2};
     }// main end
 }// class end
 
 // class 밖에서 또다른 class 만들기 : 현재 코드 작성하는 파일은 class파일이 아닌 .java파일이다.
 // 즉] .java 파일에는 여러개 class가 존재할 수 있다.
 class Student{ // 1) class 클래스명{}
-    int studentID; // 2) '학생번호'속성, 2) 멤버변수 정의 = 객체의 본질/특징/성질/값
-    String studnetName; // '학생명' 속성
+    int studentID; // 2) '학생번호'속성 선언, 2) 멤버변수 정의 = 객체의 본질/특징/성질/값
+    String studentName; // '학생명' 속성 선언
 } // class end // 설계도 단점 : 복잡도가 올라간다. 장점: 재사용이 빠르다.
