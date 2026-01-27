@@ -1,6 +1,5 @@
 package day05;
 
-import java.awt.print.Book;
 import java.util.Scanner;
 
 public class Practice7 {
@@ -108,7 +107,7 @@ player2.name = "이강인"; player2.power = 85; player2.speed = 92; // 접근연
 
 int sum1 = player1.power+player1.speed;
 int sum2 = player2.power+player2.speed;
-if( sum1 > sum2 ){System.out.println(player1.name)
+if( sum1 > sum2 ){System.out.println(player1.name);
 }else{System.out.println(player2.name);}
 
 /*[문제 9] MenuItem 클래스를 만드세요. name(문자열), price(정수), isSignature(boolean, 대표메뉴 여부) 멤버 변수를 가집니다.
@@ -133,7 +132,7 @@ MenuItem menuItem3 = new MenuItem();    menuItem1.name = "계란찜"; menuItem1.
             String mbti= scan.next();
         // 입력받은 값을 객체 내 저장하기 , 객체변수명.속성명(보라색) = 변수명(검정색)
         u1.name = name; u1.age = age; u1.mbti = mbti;
-            System.out.println("이름: %s    나이: %d    MBTI: %s \n ", u1.name, u1.age, u1.mbti);
+            System.out.printf("이름: %s    나이: %d    MBTI: %s \n ", u1.name, u1.age, u1.mbti);
 
 
     }
