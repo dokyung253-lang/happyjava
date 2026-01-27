@@ -1,4 +1,4 @@
-package day05;
+package day23;
 
 // 클래스 용도
 // 1) main 함수 갖는 클래스 = 실행목적

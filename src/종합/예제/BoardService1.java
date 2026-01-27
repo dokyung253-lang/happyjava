@@ -1,8 +1,8 @@
-package day05; // 해당 클래스의 패키지/폴더 위치
+package 종합.예제; // 해당 클래스의 패키지/폴더 위치
 
 import java.util.Scanner;
 
-public class BoardService { // 자바는 클래스 단위로 실행한다.
+public class BoardService1 { // 자바는 클래스 단위로 실행한다.
 
     public static void main(String[] args){
         //  자바는 무조건 main 함수 부터 코드 실행흐름 시작된다.

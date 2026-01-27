@@ -1,9 +1,8 @@
-package day05;
+package day23;
 
 public class Pet {
-    public class Pet{
         String name;
         String species;
         int age;
     }
-}
+
