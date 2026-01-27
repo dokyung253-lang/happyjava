@@ -1,6 +1,7 @@
 package day05;
 
 import java.awt.print.Book;
+import java.util.Scanner;
 
 public class Practice7 {
     public static void main(String[] args) {
@@ -90,26 +91,50 @@ television1.volume--; television1.volume --;
 1. main 함수에서 Player 객체 2개를 생성하세요.
 2. 첫 번째 객체에는 "손흥민", 90, 95를, 두 번째 객체에는 "이강인", 85, 92를 각각 저장하세요.
 3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.*/
+// js : 선언적객체 : class A{} -> new A()    , 비선언객체: let a = {}
+// java : 선언적객체 : class A{} -> bew A();
+//클래스명은 무조건 첫글자 대문자로 시작한다.
+            // 클래스 (객체 표현한 설계도/논리적)
+            // vs 객체(속성과 기능 갖는 대상; 추상적, 포괄적 ; 아직 컴퓨터에 실제로 존재하기 전)
+            // vs 인스턴스(클래스 기반으로 물리적(메모리) 생성; new: 인스턴스화 키워드)
+// 생성된 객체는 변수에 저장하지 않으면 일정시간 지나면 GC(garbage collector)가 삭제한다.
 Player player1 = new Player();
 player1.name = "손흥민"; player1.power = 90; player1.speed = 95;
 Player player2 = new Player();
-player2.name = "이강인"; player2.power = 85; player2.speed = 92;
+player2.name = "이강인"; player2.power = 85; player2.speed = 92; // 접근연산자 . 참조연산자
+           //교수님답변 System.out.println(player1.name + player1.power + player1.speed );
+           //         System.out.println(player2.name + player2.power + player2.speed );
+
+
 int sum1 = player1.power+player1.speed;
 int sum2 = player2.power+player2.speed;
 if( sum1 > sum2 ){System.out.println(player1.name)
 }else{System.out.println(player2.name);}
 
-
-
 /*[문제 9] MenuItem 클래스를 만드세요. name(문자열), price(정수), isSignature(boolean, 대표메뉴 여부) 멤버 변수를 가집니다.
 1. main 함수에서 MenuItem 객체 3개를 생성하고, 첫 번째는 "김치찌개", 8000, true, 두 번째는 "된장찌개", 8000, false, 세 번째는 "계란찜", 3000, false로 저장하세요.
 2. if문을 사용하여 isSignature가 true인 메뉴 객체를 찾아, "[대표메뉴] [메뉴이름] : [가격]원" 형식으로 출력하세요.*/
+MenuItem menuItem1 = new MenuItem();    menuItem1.name = "김치찌개"; menuItem1.price = 8000; menuItem1.isSignature = true;
+MenuItem menuItem2 = new MenuItem();    menuItem1.name = "된장찌개"; menuItem1.price = 8000; menuItem2.isSignature = false;
+MenuItem menuItem3 = new MenuItem();    menuItem1.name = "계란찜"; menuItem1.price = 3000; menuItem3.isSignature = false;
+        if(menuItem1.isSignature = true ){ System.out.println( menuItem1.name + menuItem1.price); }
+        if(menuItem2.isSignature = true ){ System.out.println( menuItem2.name + menuItem2.price); }
+        if(menuItem3.isSignature = true ){ System.out.println( menuItem3.name + menuItem3.price); }
 
 /*[문제 10] UserProfile 클래스를 만드세요. name(문자열), age(정수), mbti(문자열) 멤버 변수를 가집니다.
 1. main 함수에서 UserProfile 객체를 하나 생성하세요.
 2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 순서대로 입력받으세요.
 3. 입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
 3. 모든 정보가 저장된 객체의 멤버 변수들을 가져와 "--- 프로필 ---", "이름: [이름]", "나이: [나이]", "MBTI: [MBTI]" 형식으로 출력하세요.*/
+        UserProfile u1 = new UserProfile();
+        Scanner scan = new Scanner(System.in);  // 입력 객체
+            String name = scan.next();  // 입력받기
+            int age = scan.nextInt();
+            String mbti= scan.next();
+        // 입력받은 값을 객체 내 저장하기 , 객체변수명.속성명(보라색) = 변수명(검정색)
+        u1.name = name; u1.age = age; u1.mbti = mbti;
+            System.out.println("이름: %s    나이: %d    MBTI: %s \n ", u1.name, u1.age, u1.mbti);
+
 
     }
 }
