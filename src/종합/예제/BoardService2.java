@@ -32,18 +32,22 @@ public class BoardService2 {
                         break; // 반복문 종료
                     }
                 } // for end
-                if (check == true) {System.out.println("[안내] 글쓰기 성공");
-                } else {System.out.println("[경고] 게시물을 등록할 공간이 부족합니다.");
-          // ************** 지역변수란? { }안에서 선언한(태어난) 변수는 중괄호가 끝나면 사라진다.
+                if (check == true) {
+                    System.out.println("[안내] 글쓰기 성공");
+                } else {
+                    System.out.println("[경고] 게시물을 등록할 공간이 부족합니다.");}
+                    // ************** 지역변수란? { }안에서 선언한(태어난) 변수는 중괄호가 끝나면 사라진다.
                 }else if (ch == 2) { // 2이면
-                    for( int index = 0; index <= boards.length -1; index++){
+                    for (int index = 0; index <= boards.length - 1; index++) {
                         Board board = boards[index]; //  index번째 객체(게시물) 꺼내기
-                        if( board != null ){ //해당 게시물이 비어있지 않으면
-                            System.out.print("작성자 : "+  board.작성자);
-                            System.out.println("내용 : "+ board. 내용);
+                        if (board != null) { //해당 게시물이 비어있지 않으면
+                            System.out.print("작성자 : " + board.작성자);
+                            System.out.println("내용 : " + board.내용);
                             System.out.println("---------------------------------------");
-                    }
-                }// if end
-            }// for end
-        }// main end
-    }// class end
+                        }// if end
+                    }// for end
+                }// else if end
+
+        }// for end
+    }// main end
+}// class end

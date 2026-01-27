@@ -1,9 +1,9 @@
 package day24;
 
 public class practice8 {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         // [1]
-        Printer.printer = new Printer(); // 객체 생성
+        Printer printer = new Printer(); // 객체 생성
         printer.printMessage(); // 메소드 호출
         // [2]
         Greeter greeter = new Greeter();
@@ -20,7 +20,7 @@ public class practice8 {
         Lamp lamp = new Lamp();
         lamp.turnOn();
         lamp.turnOff();
-        System.out.println("lamp.isON ="+ lamp.isOn);
+        System.out.println("lamp.isON ="+ lamp.isON);
         //[6]
         Product p1 = new Product(); // Product 자동완성 할 떄 패키지 명
         boolean result6 = p1.sell(15);
@@ -41,6 +41,8 @@ public class practice8 {
 class Greeter{
     void great( String 이름 ){
         System.out.println("안녕하세요" + 이름 + "님!");
+    }
+    public void greet(String 유재석) {
     }
 }
 
@@ -71,8 +73,8 @@ class Lamp {
     boolean isON;
 
     // 기능 = 메소드
-    void turnOn() {isOn = true;}
-    void turnOff() {isOn = false;}
+    void turnOn() {isON = true;}
+    void turnOff() {isON = false;}
 }
 
 /*[문제 6] Product 클래스를 만드세요. name(문자열)과 stock(정수) 멤버 변수를 가집니다.

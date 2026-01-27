@@ -17,7 +17,7 @@ public class BoardController {
         return false; // for문 끝났음에도 저장 못했으면 false 반환
     }// method end
     // 기능 2 : 게시물 조회
-    Board[ ]doget( ){
+    public Board[ ]doGet(){
         return boards; // boards 반환했으므로 리턴타입은 boards 변수의 타입은 Board[ ] 배열이다.
     }
 }// class end
