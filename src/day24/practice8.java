@@ -11,25 +11,29 @@ public class practice8 {
         // [3]
         SimpleCalculator c = new SimpleCalculator();
         int result3 = c.add(3, 5);
-        System.out.println("result3 ="+ result3);
+        System.out.println("result3 =" + result3);
         // [4]
         Checker checker = new Checker();
         boolean result4 = checker.isEven(3);
-        System.out.println( result4? "짝수입니다": "홀수입니다");
+        System.out.println(result4 ? "짝수입니다" : "홀수입니다");
         //[5]
         Lamp lamp = new Lamp();
         lamp.turnOn();
         lamp.turnOff();
-        System.out.println("lamp.isON ="+ lamp.isON);
+        System.out.println("lamp.isON =" + lamp.isON);
         //[6]
         Product p1 = new Product(); // Product 자동완성 할 떄 패키지 명
         boolean result6 = p1.sell(15);
-        System.out.println("result6 = "+ result6);
+        System.out.println("result6 = " + result6);
+        // [7]
+        Visualizer visualizer1 = new Visualizer();
+
     } // main end
+} // class end
 /*[문제 1] Printer 클래스를 만드세요.
 1. "안녕하세요, 메소드입니다."라고 출력하는 printMessage 메소드를 정의하세요. (매개변수 X, 반환값 X)
 2. main 함수에서 Printer 객체를 생성하고, printMessage 메소드를 호출하세요.*/
-   class Printer {
+ class Printer {
     void printMessage() {
         System.out.println("안녕하세요, 메소드입니다.");
     }
@@ -38,7 +42,7 @@ public class practice8 {
 /*[문제 2] Greeter 클래스를 만드세요.
 1. 문자열(이름) 하나를 매개변수로 받아, "안녕하세요, [이름]님!"이라고 출력하는 greet 메소드를 정의하세요. (매개변수 O, 반환값 X)
 2. main 함수에서 Greeter 객체를 생성하고, 자신의 이름을 인자로 전달하여 greet 메소드를 호출하세요.*/
-class Greeter{
+ class Greeter{
     void great( String 이름 ){
         System.out.println("안녕하세요" + 이름 + "님!");
     }
@@ -49,7 +53,7 @@ class Greeter{
 /*[문제 3] SimpleCalculator 클래스를 만드세요.
 1. 정수 두 개를 매개변수로 받아, 두 수의 합을 반환하는 add 메소드를 정의하세요. (매개변수 O, 반환값 O)
 2. main 함수에서 SimpleCalculator 객체를 생성하고, add 메소드를 호출하여 반환된 결과를 변수에 저장한 뒤, 그 변수를 출력하세요.*/
-class SimpleCalculator{
+ class SimpleCalculator{
     int add( int 정수1, int 정수2 ){
         return 정수1 + 정수2; // int + int 이므로 반환타입은 int
     }
@@ -58,7 +62,7 @@ class SimpleCalculator{
 /*[문제 4] Checker 클래스를 만드세요.
 1. 정수 하나를 매개변수로 받아, 그 수가 짝수이면 true, 홀수이면 false를 반환하는 isEven 메소드를 정의하세요.
 2. main 함수에서 isEven 메소드를 호출하고, 반환된 값에 따라 "짝수입니다." 또는 "홀수입니다."를 출력하세요.*/
-class Checker {
+ class Checker {
     boolean isEven( int 정수 ){
         if(정수 %2 == 0){ return true; }
         else{return false;}
@@ -68,7 +72,7 @@ class Checker {
 /*[문제 5] Lamp 클래스를 만드세요. isOn (boolean) 멤버 변수를 가집니다.
 1. turnOn 메소드를 호출하면 isOn이 true가 되고, turnOff 메소드를 호출하면 false가 되도록 두 메소드를 정의하세요.
 2. main 함수에서 Lamp 객체를 생성하고, turnOn과 turnOff를 차례로 호출하며 각 단계에서 램프의 상태(isOn 값)를 출력하여 확인하세요.*/
-class Lamp {
+ class Lamp {
     // 속성 = 멤버변수
     boolean isON;
 
@@ -80,7 +84,7 @@ class Lamp {
 /*[문제 6] Product 클래스를 만드세요. name(문자열)과 stock(정수) 멤버 변수를 가집니다.
 1. Product 클래스 안에, 구매 수량을 매개변수로 받아 재고를 차감하는 sell 메소드를 정의하세요. 이 메소드는 재고가 충분하면 재고를 줄이고 true를, 부족하면 "재고 부족" 메시지를 출력하고 false를 반환합니다.
 2. main 함수에서 Product 객체를 생성하고 초기 재고를 10으로 설정한 뒤, sell 메소드를 호출하여 구매를 시도하고 결과를 확인하세요.*/
-class Product{
+ class Product{
     String name;
     int stock = 10; // 멤버변수의 초기값 대입 < 초기화 >
     boolean sell( int 구매수량 ){
@@ -98,8 +102,9 @@ class Product{
 1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.*/
 class Visualizer{
-    int number;
     String star = "★" ;
+
+    }
 
 
 }
@@ -112,4 +117,3 @@ class Visualizer{
 일일 최대 요금: 20,000원
 3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.*/
 
-}
