@@ -1,7 +1,7 @@
 package day25;
 
 public class Phone {
-    final int price;
+    int price;
     /*  클래스 기본 포맷.(초기엔 작성하기)
         1. 멤버변수 - 속성
         2. 생성자
