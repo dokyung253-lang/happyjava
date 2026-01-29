@@ -33,6 +33,7 @@ public class Exam1 {
         System.out.println( 리스트변수명.get(0)); // 유재석
         System.out.println( 리스트변수명.get(2)); // 강호동
             // 8. 요소 삭제 : .remove( 인덱스 ) : 특정한 인덱스의 요소 삭제
+
         System.out.println("리스트변수명 = " + 리스트변수명);
             // 9. 요소 찾기 : .indexOf( 찾을 값 ) : 찾을값이 존재하면 인덱스 반환, 없으면 -1
         int 찾은결과= 리스트변수명.indexOf( "강호동" );
@@ -42,13 +43,13 @@ public class Exam1 {
         System.out.println("찾은결과2 = " + 찾은결과2);  // 강호동은 존재하므로 true 이다.
 
         // 5. 반복문과 리스트 활용
-            // 1. 일반 for문
+            /* 1. 일반 for문
         for( int index = 0; index <= 리스트변수명.size() -1; index++){
             System.out.println("리스트변수명.get(index) = " + 리스트변수명.get(index));
-        }
-            /* (일반 for문) vs 향상된 for문
+        }*/
+            // (일반 for문) vs 향상된 for문
         for( String str : 리스트변수명 ){System.out.println("str = " + str);}
-             */
+
 
             // 11. 요소 전체 삭제 : .clear()
         리스트변수명.clear();
