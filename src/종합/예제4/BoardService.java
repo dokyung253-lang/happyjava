@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class BoardService {
     // -- 최초 실행 함수 = main
     public static void main(String[] args) {
-    BoardController bc = new BoardController();
+    BoardController bc = new BoardController(); // static 은 객체없이 가능해서 static 쓰면 안 써도 됨
         for( ; ; ){ // 반복문
             System.out.println("==================My Community===================");
             System.out.println("1. 게시물쓰기 2. 게시물출력");
