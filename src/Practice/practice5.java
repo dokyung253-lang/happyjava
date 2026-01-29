@@ -1,8 +1,8 @@
-package day22;
+package Practice;
 
 import java.util.Scanner;
 
-public class practice1 {
+public class practice5 {
     public static void main(String[] args) {
         /*[문제 1] for문을 사용하여 1부터 10까지의 숫자를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.*/
         for (int n = 1; n <= 10; n++) {

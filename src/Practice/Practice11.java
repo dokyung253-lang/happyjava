@@ -1,4 +1,4 @@
-package day26_D8;
+package Practice;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,15 +60,14 @@ public class Practice11 {
         2. 만약 사용자가 "종료" 라는 단어를 입력하면, 입력을 멈추고 그때까지 리스트에 저장된 모든 내용을 출력한 뒤 프로그램을 종료하세요.*/
         Scanner scan = new Scanner(System.in);
         ArrayList< String > list3  = new ArrayList<>();
-
         //if( "종료" ){ break;
             System.out.println("list3 = " + list3);}
-
-
-
+        
         /*[문제 8] "국어", "수학", "사회", "과학"을 요소로 가지는 ArrayList를 생성하세요.
         1. .set(인덱스, 요소) 메소드를 사용하여 1번 인덱스의 "수학"을 "영어"로 수정하세요.
         2. 수정 후의 리스트 전체를 출력하여 결과가 올바른지 확인하세요.*/
-
+        ArrayList< String > subject  = new ArrayList<>();
+        subject.set(1,"영어");
+        System.out.println("subject = " + subject);
     }
 }

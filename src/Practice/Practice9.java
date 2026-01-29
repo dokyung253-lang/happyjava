@@ -1,4 +1,4 @@
-package day25;
+package Practice;
 
 public class Practice9 {
 
