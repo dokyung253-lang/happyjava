@@ -12,7 +12,7 @@ public class WaitingView {
     }
     private WaitingController wc = WaitingController.getInstance();
     private Scanner scan = new Scanner(System.in);
-
+    // [1] 대기등록
     public void writeView() {
         scan.nextLine();
         System.out.println("전화번호: ");
@@ -23,7 +23,7 @@ public class WaitingView {
         if (result) {System.out.println("[안내] 대기 등록 완료");}
         else {System.out.println("[안내] 대기 등록 실패");}
     }
-
+    // [2] 대기 현황 출력
     public void printView() {
         ArrayList<WaitingDto> waitings = wc.doGet();
         for (WaitingDto waiting : waitings) {System.out.printf("번호: %d, 전화번호:%s, 인원수:%d \n",
@@ -46,4 +46,37 @@ public class WaitingView {
             }
         }
     }
+
+    // [2] 로그인
+
+
+    // [2] 로그인 페이지
+    public void login(){
+        System.out.print("아이디 : ");     String mid = scan.next();
+        System.out.print("비밀번호 : ");    String mpw = scan.next();
+        boolean result = true;
+        if( result == true ){ System.out.println("로그인 성공 ");}
+        else{  System.out.println("로그인 실패");}
+
+    }
+
+
+    // [*] 메인 페이지
+    public void index(){
+        for( ; ; ){
+            System.out.print("1.회원가입 2.로그인  선택>");
+            int ch = scan.nextInt();
+            if( ch == 1 ){ signup(); }
+            else if( ch == 2 ){ login(); }
+        }
+    }
+    // [2] 로그인 페이지
+    public void login(){
+        System.out.print("아이디 : ");     String mid = scan.next();
+        System.out.print("비밀번호 : ");    String mpw = scan.next();
+        boolean result = mc.login( mid , mpw );
+        if( result == true ){ System.out.println("로그인 성공 ");}
+        else{  System.out.println("로그인 실패");}
+    }
+
 }

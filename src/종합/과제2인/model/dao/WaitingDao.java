@@ -21,4 +21,17 @@ public class WaitingDao {
     public ArrayList<WaitingDto> doGet(){
         return waitings;
     }
+    // [2] 로그인(현재 정보와 기존 정보를 비교하는 작업)
+    public boolean login(String id, pw){
+        System.out.println("MemberDao.login");
+        System.out.println("id = " + id + "pw = "+ pw);
+        for(int index = 0; index<= waitings.size()-1; index ++ ){ // 1. 리스트(배열) 0부터 마지막 인덱스까지
+            WaitingDto waitingDto = waitings.get(index); // 2. index번째 회원객체를 꺼낸다.
+            // 3. 만약에 index번쨰 회원객체내 아이디와 비밀번호가 입력받은 아이디/비밀번호와 같다면
+            if(waitingDto.getid().equals( id )&& waitingDto,getpw().equals( pw )){
+                return true; // 4. 로그인 성공
+            }
+
+        }
+    }
 }
