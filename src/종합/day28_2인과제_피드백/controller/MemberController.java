@@ -14,6 +14,15 @@ public class MemberController {
         System.out.println("mid = " + mid + ", mpw = " + mpw + ", mname = " + mname + ", mphone = " + mphone); // sout+ p
 
         // [*] 유효성검사 (중복검사, 데이터길이검사 등등)
-        return true; // 임시
+        boolean result = md.signup( mid , mpw, mname, mphone ); // 임시
+        return result;
+    }
+
+    //[2] 로그인 메소드
+    public boolean login( String mid, String mpw ){
+        System.out.println("MemberController.login");
+        System.out.println("mid = " + mid + ", mpw : "+ mpw );
+        boolean result = md.login( mid, mpw );
+        return result;
     }
 }
