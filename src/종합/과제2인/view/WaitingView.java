@@ -79,4 +79,13 @@ public class WaitingView {
         else{  System.out.println("로그인 실패");}
     }
 
+
+    // [2] 로그인 메소드
+    public boolean login( String mid , String mpw ){
+        System.out.println("MemberController.login");
+        System.out.println("mid = " + mid + ", mpw = " + mpw);
+        boolean result = md.login( mid , mpw );
+        return result;
+    }
+
 }

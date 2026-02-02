@@ -29,9 +29,9 @@ public class WaitingDao {
             WaitingDto waitingDto = waitings.get(index); // 2. index번째 회원객체를 꺼낸다.
             // 3. 만약에 index번쨰 회원객체내 아이디와 비밀번호가 입력받은 아이디/비밀번호와 같다면
             if(waitingDto.getid().equals( id )&& waitingDto,getpw().equals( pw )){
-                return true; // 4. 로그인 성공
+                return true // 4. 로그인 성공
             }
-
-        }
-    }
+        } // for end
+        return false; // 5. 반복문 중에 동일항 정보가 없다면 로그인 실패
+    } // m end
 }
