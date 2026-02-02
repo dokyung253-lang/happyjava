@@ -7,4 +7,5 @@ public class BookController {
     private static final BookController instance = new BookController();
     public static BookController getInstance(){ return instance; }
     private BookDao md = BookDao.getInstance();
+
 }
