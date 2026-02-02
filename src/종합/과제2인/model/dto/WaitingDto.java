@@ -1,6 +1,6 @@
 package 종합.과제2인.model.dto;
 
-public class RegiDto {
+public class WaitingDto {
     // 멤버변수
         private int no;
         private String id;
@@ -8,7 +8,7 @@ public class RegiDto {
         private String name;
         private String phone;
 
-        public RegiDto(int pw, String phone, String name, String id, int no) {
+        public WaitingDto(int pw, String phone, String name, String id, int no) {
             this.pw = pw;
             this.phone = phone;
             this.name = name;

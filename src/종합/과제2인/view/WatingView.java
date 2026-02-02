@@ -1,11 +1,10 @@
 package 종합.과제2인.view;
 
-import 종합.과제2인.controller.RegiController;
-
 import java.util.Scanner;
 
 Scanner scan = new Scanner(System.in);
 public class RegiView {
+    private re= RegiView.getInstance();
     public void writeView() {
         scan.nextLine();
         String id = scan.nextLine();
@@ -23,6 +22,7 @@ public class RegiView {
             System.out.println("[안내] 회원가입 실패");
         }
     }
+
     public void LoginView(){
         String id = scan.nextLine();
         System.out.println("아이디: ");

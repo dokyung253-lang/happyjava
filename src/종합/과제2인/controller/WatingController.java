@@ -1,14 +1,11 @@
 package 종합.과제2인.controller;
 
 import 종합.과제2인.model.dao.RegiDao;
-import 종합.과제2인.model.dto.RegiDto;
 
-import java.util.ArrayList;
-
-public class RegiController {
-    private RegiController(){};
-    private static final RegiController instance=new RegiController();
-    public static RegiController getInstance(){
+public class WatingController {
+    private WatingController(){};
+    private static final WatingController instance=new WatingController();
+    public static WatingController getInstance(){
         return instance;
     }
     private RegiDao rd = RegiDao.getInstance();
