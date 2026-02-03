@@ -53,7 +53,7 @@ class 하위클래스 extends 상위클래스{
         System.out.println("하위클래스메소드실행2");
         System.out.println( this.value3 ); // this : 현재객체 뜻
         System.out.println( super.value1 ); // super : 상위객체 뜻
-        // 부모와 자식간의 멤버변수명이 동일 할 때 this, super 사용한 구분한다.
+         // 부모와 자식간의 멤버변수명이 동일 할 때 this, super 사용한 구분한다.
     }
 }
 
