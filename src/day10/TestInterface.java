@@ -6,6 +6,6 @@ public interface TestInterface {
 
     // * 생성자 불가능
     // * 추상메소드 : 메소드 선언만, {} 구현부 없음
-    public static void method1() {
-    }
+    public abstract void method1();
+    void method2( int x ); // public abstract 생략 가능
 }

@@ -21,6 +21,11 @@ public class Exam1 {
         TestInterface testInterface = new Tool();
         TestInterface.method1();
 
+        // 상수 호출 가능
+        System.out.println( TestInterface.b );
+
+        testInterface.method2(10);
+
         // implements vs extends
     } // main end
 } // class end
