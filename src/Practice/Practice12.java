@@ -1,18 +1,21 @@
 package Practice;
 
-import day24.Student;
-
 public class Practice12 {
     public static void main(String[] args) {
         // [1]
         Student student = new Student();
         student.name = "가나다";
         student.studentId = 12345;
-        System.out.println( "name = "+ student.name);
+        System.out.print( "name = "+ student.name);
         System.out.println(", studentId = "+ student.studentId);
         // [2]
         Cat cat = new Cat();
         cat.makeSound();
+        //[3]
+        Computer computer = new Computer();
+        //[4] : Triangle 클래스는 Figure로 부터 상속받았기 때문에
+        Triangle triangle = new Triangle();
+        Figure figure = triangle;
 
     }// main out
 } // class out
@@ -20,12 +23,8 @@ public class Practice12 {
 1. name(문자열) 멤버 변수를 가진 Person 클래스를 만드세요.
 2. Person 클래스를 상속받는 Student 클래스를 만드세요. Student 클래스에는 studentId(정수) 멤버 변수를 추가하세요.
 3. main 함수에서 Student 객체를 생성하고, 상속받은 name과 자신의 studentId에 값을 저장한 뒤 모두 출력하세요.*/
- class Person{
-     String name;
-    }
-class Student extends Person{
-     int studentId;
-}
+ class Person{ String name;}
+class Student extends Person{ int studentId;}
 
 /*[문제 2] 메소드 오버라이딩 (Method Overriding)
 1. "동물이 소리를 냅니다."를 출력하는 makeSound() 메소드를 가진 Animal 클래스를 만드세요.
@@ -33,27 +32,42 @@ class Student extends Person{
 3. main 함수에서 Cat 객체를 생성하고 makeSound() 메소드를 호출하여, 재정의된 내용이 출력되는지 확인하세요.*/
 class Animal{
     void makeSound(){
-        System.out.println("고양이가 야옹하고 웁니다.");
+        System.out.println("동물이 소리를 냅니다.");
     }
 }
-class Cat{}
+class Cat extends Animal{ // 오버라이딩 : 물려받은 메소드 재정의, 자동완성
+    @Override
+    void makeSound(){System.out.println("고양이가 야옹하고 웁니다.");}
+}
 
 /*[문제 3] 생성자 호출 순서
 1. 생성자에서 "부모 클래스 생성자 실행"을 출력하는 Machine 클래스를 만드세요.
 2. Machine을 상속받고, 생성자에서 "자식 클래스 생성자 실행"을 출력하는 Computer 클래스를 만드세요.
 3. main 함수에서 Computer 객체를 생성할 때, 콘솔에 출력되는 생성자 호출 순서를 확인하세요.*/
+class Machine{
+    Machine(){System.out.println("부모 클래스 생성자 실행");}
+}
+class Computer extends Machine{
+    Computer(){System.out.println("자식 클래스 생성자 실행");}
+}
 
 /*[문제 4] 다형성: 자동 타입 변환 (Upcasting)
 1. Figure 클래스를 만드세요.
 2. Figure를 상속받는 Triangle 클래스를 만드세요.
 3. main 함수에서 Triangle 객체를 생성하여 Figure 타입의 변수에 저장하는 코드를 작성하고, 이것이 가능한 이유를 주석으로 설
 명하세요.*/
+class Figure{}
+class Triangle extends Figure{}
 
 /*[문제 5] 다형성과 오버라이딩
 1."도형을 그립니다."를 출력하는 draw() 메소드를 가진 Shape 클래스를 만드세요.
 2.Shape을 상속받고, draw() 메소드를 재정의하여 "원을 그립니다."를 출력하는 Circle 클래스를 만드세요.
 3.main 함수에서 Shape shape = new Circle(); 코드를 작성한 뒤, shape.draw()를 호출했을 때 어떤 결과가 나오는지 확인하
 고 그 이유를 주석으로 설명하세요.*/
+class Shape{
+    void draw(){System.out.println("도형을 그립니다.");}
+}
+class Circle extends Shape{}
 
 /*[문제 6] instanceof와 강제 타입 변환 (Downcasting)
 1. Vehicle 클래스와 이를 상속받는 Bus 클래스를 만드세요. Bus 클래스에만 checkFare() 메소드("요금을 확인합니다.")를 추가

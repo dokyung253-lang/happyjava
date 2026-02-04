@@ -1,6 +1,5 @@
 package 종합.예제6.controller;
 
-import day25.package1.A;
 import 종합.예제6.model.dao.BoardDao;
 import 종합.예제6.model.dto.BoardDto;
 

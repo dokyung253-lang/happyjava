@@ -1,7 +1,5 @@
 package 종합.day28_2인과제_피드백.model.dao;
 
-import day23.Product;
-
 public class ProductDao {
     private ProductDao(){}
     private static final ProductDao instance = new ProductDao();
