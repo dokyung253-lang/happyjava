@@ -35,7 +35,7 @@ class Animal{
         System.out.println("동물이 소리를 냅니다.");
     }
 }
-class Cat extends Animal{ // 오버라이딩 : 물려받은 메소드 재정의, 자동완성
+// class Cat extends Animal{ // 오버라이딩 : 물려받은 메소드 재정의, 자동완성
     @Override
     void makeSound(){System.out.println("고양이가 야옹하고 웁니다.");}
 }
