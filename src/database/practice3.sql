@@ -91,6 +91,7 @@ insert into books( book_id, title, author, genre, price, stock, pub_date ) value
 -- order_date : '2023-08-15'
 insert into orders( book_id, customer, order_qty, order_date ) values ( 1002, '최지훈', 1, '2023-08-15' );
 -- [문제 4]books 테이블에서 book_id가 1004 인 도서의 price를 15000 으로 수정하세요.
+set SQL_SAFE_UPDATES = 0;  -- safe모드 해제
 update books set  price = 15000 where book_id = 1004; 
 -- [문제 5]books 테이블에서 장르(genre)가 '소설' 인 도서의 price를기존 가격에서 2000원 인상하도록 수정하세요.(산술연산자 사용)
 update books set price = price +2000 where genre = '소설';

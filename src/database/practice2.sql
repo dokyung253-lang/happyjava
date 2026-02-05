@@ -50,7 +50,7 @@ create table orders(
 	order_id bigint auto_increment,
     constraint primary key(order_id),
     member_id int,
-    constraint foreign key(member_id) references members(member_id) on delete cascade on update cascade,
+    constraint foreign key(member_id) references members(member_id) on delete cascade on update cascade ,
     order_date datetime default now(),
     total_price int unsigned not null
 );
@@ -108,6 +108,10 @@ select * from order_items;
 create table employees(
 emp_id int auto_increment,
 constraint primary key(emp_id),
+ emp_name varchar(40) not null , 
+ salary int unsigned not null,
+ hire_date date not NULL,
+ department varchar(50)
 );
 -- [문제 7]
 -- 아래 조건에 맞는 boards 테이블을 생성하는 SQL을 작성하세요.
@@ -118,6 +122,15 @@ constraint primary key(emp_id),
 -- content (내용): text, NULL 허용 안함
 -- writer_id (작성자회원번호): int, Foreign Key → members(member_id)
 -- created_at (작성일): datetime, Default 현재 날짜/시간
+ create table boards(
+ board_id int auto_increment,
+ constraint primary key(board_id),
+title varchar(200) not null,
+content  text not null,
+writer_id int, 
+constraint foreign key (member_id) references members(member_id),
+created_at datetime default now()
+);
 
 -- [문제 8]
 -- 아래 조건에 맞는 comments 테이블을 생성하는 SQL을 작성하세요.
@@ -128,6 +141,16 @@ constraint primary key(emp_id),
 -- writer_id (작성자회원번호): int, Foreign Key → members(member_id)
 -- content (댓글내용): varchar(300), NULL 허용 안함
 -- created_at (작성일): datetime, Default 현재 날짜/시간
+create table comments(
+comment_id int auto_increment,
+constraint primary key(comment_id),
+board_id  int, 
+writer_id  int, 
+constraint foreign key (writer_id) references members(member_id),
+content varchar(300) not null,
+created_at  datetime default now()
+);
+
 
 -- [문제 9]
 -- 아래 조건에 맞는 payments 테이블을 생성하는 SQL을 작성하세요.
@@ -138,6 +161,15 @@ constraint primary key(emp_id),
 -- payment_amount (결제금액): int unsigned, NULL 허용 안함
 -- payment_method (결제수단): varchar(30)
 -- payment_date (결제일): datetime, Default 현재 날짜/시간
+create table payments(
+payment_id bigint auto_increment, 
+constraint primary key(payment_id),
+order_id bigint, 
+constraint foreign key(order_id) references orders(order_id),
+payment_amount  int unsigned not null,
+payment_method varchar(30),
+payment_date  datetime default now()
+);
 
 -- [문제 10]
 -- 아래 조건에 맞는 reviews 테이블을 생성하는 SQL을 작성하세요.
@@ -149,4 +181,14 @@ constraint primary key(emp_id),
 -- rating (평점): tinyint unsigned, NULL 허용 안함
 -- review_text (리뷰내용): text
 -- created_at (작성일): datetime, Default 현재 날짜/시간
-
+create table reviews(
+review_id int auto_increment,
+constraint primary key(review_id),
+product_id int,
+constraint foreign key (product_id) references products(product_id),
+member_id int,
+constraint foreign key(member_id) references members(member_id),
+rating  tinyint unsigned not null,
+review_text text,
+created_at datetime Default now()
+);
