@@ -9,8 +9,8 @@ public class Practice12 {
         System.out.print( "name = "+ student.name);
         System.out.println(", studentId = "+ student.studentId);
         // [2]
-        Cat cat = new Cat();
-        cat.makeSound();
+        Cat mycat = new myCat();
+        mycat.makeSound();
         //[3]
         Computer computer = new Computer();
         //[4] : Triangle 클래스는 Figure로 부터 상속받았기 때문에
@@ -35,7 +35,7 @@ class Animal{
         System.out.println("동물이 소리를 냅니다.");
     }
 }
-class Cat extends Animal{ // 오버라이딩 : 물려받은 메소드 재정의, 자동완성
+class myCat extends Animal{ // 오버라이딩 : 물려받은 메소드 재정의, 자동완성
     @Override
     void makeSound(){System.out.println("고양이가 야옹하고 웁니다.");}
 }

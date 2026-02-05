@@ -1,5 +1,5 @@
 package Practice;
-src/inheritance/Cat.java
+
 public class Practice13 {
     public static void main(String[] args) {
         // [문제 1] 다형성 특징 : 상속 (+ 객체) vs 인터페이스 (- 객체)
