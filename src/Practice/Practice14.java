@@ -35,21 +35,21 @@ public class Practice14 {
             System.out.println("객체가 초기화되지 않았습니다.");
         }
 
-        // [문제 5]
+        /* [문제 5]
         try{
             System.out.println("데이터베이스 연결을 시작합니다.");
         }catch(){finally{
             System.out.println("데이터베이스 연결을 종료합니다.");
         }
-
-        // [문제 6]
+        */
+        /* [문제 6]
             try{String text = null;   text.length();   int result1 = 5 ; int result2 = 0 ;
             }catch (NullPointerException e1 ){
 
             }catch (ArithmeticException e2){}
-
+        */
         // [문제 7]
-            pauseOneSecond();
+        // pauseOneSecond();
 
         // [문제 8]
             try{int[] arr = new int[2]; System.out.println(arr[5]);
@@ -58,7 +58,6 @@ public class Practice14 {
             }
         }
     }
-}
 /*[문제 1] ArithmeticException 처리
 1. 두 정수를 나누는 코드를 작성하세요.
 2. try-catch 문을 사용하여, 0으로 나눌 때 발생하는 ArithmeticException을 잡으세요.
@@ -105,7 +104,7 @@ main 함수에서 pauseOneSecond() 메소드를 호출하고, try-catch를 사�
 필요 코드
 Thread.sleep(1000); // 1초간 프로그램 일시정지
 */
-static void pauseOneSecond() throws InterruptedException {Thread.sleep(1000);};
+//static void pauseOneSecond() throws InterruptedException {Thread.sleep(1000);};
 /*[문제 8] Exception 클래스로 모든 예외 처리
 1. try 블록 안에 ArrayIndexOutOfBoundsException을 유발하는 코드를 작성하세요.
 2. catch 블록을 단 하나만 사용하여, 모든 예외의 부모 클래스인 Exception 타입으로 예외를 처리하세요.
