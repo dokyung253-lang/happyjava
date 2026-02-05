@@ -9,7 +9,7 @@ public class Practice12 {
         System.out.print( "name = "+ student.name);
         System.out.println(", studentId = "+ student.studentId);
         // [2]
-        Cat mycat = new myCat();
+        Cat mycat = new Cat();
         mycat.makeSound();
         //[3]
         Computer computer = new Computer();

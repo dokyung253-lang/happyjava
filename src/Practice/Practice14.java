@@ -35,29 +35,29 @@ public class Practice14 {
             System.out.println("객체가 초기화되지 않았습니다.");
         }
 
-        /* [문제 5]
-        try{
-            System.out.println("데이터베이스 연결을 시작합니다.");
-        }catch(){finally{
-            System.out.println("데이터베이스 연결을 종료합니다.");
+        // [문제 5]
+        try {System.out.println("데이터베이스 연결을 시작합니다.");
+        }finally{System.out.println("데이터베이스 연결을 종료합니다.");}
         }
-        */
         /* [문제 6]
-            try{String text = null;   text.length();   int result1 = 5 ; int result2 = 0 ;
-            }catch (NullPointerException e1 ){
+            String text = null;   text.length();   int result = 5 / 0 ;
+            try{ String text; int result; } catch ( NullPointerException e1 ){System.out.println(e1);}
+            try{ text.length(); int result;  } catch ( ArithmeticException e2 ){System.out.println(e2);}
 
-            }catch (ArithmeticException e2){}
-        */
+         */
+
         // [문제 7]
         // pauseOneSecond();
 
-        // [문제 8]
+        /* [문제 8]
             try{int[] arr = new int[2]; System.out.println(arr[5]);
             }catch ( Exception e ){ // 모든 예외에 대해 처리해주는 상위 클래스, 다중 catch 할 경우 가장 마지막에 사용한다.
-                System.out.println("예외 발생 여부 상관없이 무조건 실행되는 구역");
+                System.out.println("알 수 없는 오류가 발생했습니다.");
             }
+
+         */
         }
-    }
+
 /*[문제 1] ArithmeticException 처리
 1. 두 정수를 나누는 코드를 작성하세요.
 2. try-catch 문을 사용하여, 0으로 나눌 때 발생하는 ArithmeticException을 잡으세요.

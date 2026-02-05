@@ -56,7 +56,7 @@ public class Exam1 {
             String str1 = "100";
             String str2 = "abc";
             int int1 = Integer.parseInt(str1); // Integer.parseInt(문자열) : 문자열 -> 정수타입 변환 메소드
-            int int2 = Integer.parseInt(str2); // "100" -> 100 (o), "1abc" -> (x), NumberFormatException
+            int int2 = Integer.parseInt(str2); // "100" -> 100 (o), "abc" -> (x), NumberFormatException
         } catch (NumberFormatException 변수명1) {
             System.out.println("예외발생4 : 정수타입으로 변환이 불가능하다.");
         }
@@ -84,12 +84,8 @@ public class Exam1 {
             System.out.println(e2);
         }catch( NullPointerException e1 ){
             System.out.println(e1);
-        }catch ( Exception e ){ // 모든 예외에 대해 처리해주는 상위 클래스, 다중 catch 할 경우 가장 마지막에 사용한다.
-            System.out.println( e );
-        }finally {
-            System.out.println("예외 발생 여부 상관없이 무조건 실행되는 구역");
-        }
-
-
+        } catch (Exception e) { // 모든 예외에 대해 처리해주는 상위 클래스, 다중 catch 할 경우 가장 마지막에 사용한다.
+            System.out.println(e);
+        } finally {System.out.println("예외 발생 여부 상관없이 무조건 실행되는 구역");}
     }// main end
 }// class end
