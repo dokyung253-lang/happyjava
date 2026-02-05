@@ -75,6 +75,8 @@ class Circle extends Shape{}
 2. main 함수에서 Vehicle vehicle = new Bus(); 코드를 작성하세요.
 3. if문과 instanceof 연산자를 사용하여 vehicle 변수가 Bus 타입인지 확인하세요.
 4. 만약 Bus 타입이 맞다면, Bus 타입으로 강제 변환한 뒤 checkFare() 메소드를 호출하세요.*/
+class Vehicle{
+};
 
 /*[문제 7] 다형성을 활용한 객체 배열
 1. "음료를 마십니다."를 출력하는 drink() 메소드를 가진 Beverage 클래스를 만드세요.
