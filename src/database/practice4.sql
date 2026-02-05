@@ -83,7 +83,7 @@ select customer, count(customer) from orders group by customer;
 select book_id, sum(order_qty) from orders group by book_id;   
 -- [문제 14] orders에서 고객별 총 주문수량 합계가 5 이상인 고객만 조회하세요.
 -- 출력: customer, 총주문수량
--- 조건: HAVING 사용
+-- 조건: HAVING 사용  
  select customer, sum(order_qty) as 총주문수량  from orders group by customer  having 총주문수량 >= 5;
 -- [문제 15] orders에서 도서번호(book_id)별 주문 건수가 3회 이상인 도서만 조회하세요.
 -- 출력: book_id, 주문건수
