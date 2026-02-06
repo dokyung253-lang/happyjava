@@ -82,25 +82,31 @@ public class BoardDao {
     }
 
     // [2] 게시물 전체 조회 dao
-    public ArrayList<BoardDao> findAll() {
-        ArratList<BoardDto> boards = new ArratList<>(); // 조회된 결과인 레코드(dto)들을 저장할 리스트/배열 선언
-        try {String sql = "select * from board"; // 1] sql 작성한다.
+    public ArrayList<BoardDto> findAll() {
+        ArrayList<BoardDto> boards = new ArrayList<>(); // 조회된 결과인 레코드(dto)들을 저장할 리스트/배열 선언
+        try {
+            String sql = "select * from board"; // 1] sql 작성한다.
             PreparedStatement ps = conn.prepareStatement(sql); // 2] sql 기재한다.
             // 3] sql 매개변수 대입한다. ?가 없으므로 생략
-            ResultSet rs = executeQuery(); // 4] sql 실행 후 몇 개 조회했는지가 아닌 조회 결과 테이블 제어
+            ResultSet rs = ps.executeQuery(); // 4] sql 실행 후 몇 개 조회했는지가 아닌 조회 결과 테이블 제어
             // executeUpdate(): insert/update.delete vs executeQuery() : select only
             // ResultSet: select 결과물을 제어하는 인터페이스,
             // rs.next() : 조회 결과에서 다음레코드 1번 이동
             while (rs.next()) { // while(논리){} 반복문, *레코드 1개씩 순회*
                 // rs.get타입명( 속성명 ) : 현재 레코드의 속성값 호출
-                int bno = rs.getInt("bno"); int bcontent = rs.getString("bcontent");
-                String bwriter = re.getString("bwriter");  String bdate = rs.getString("bdate");
+                int bno = rs.getInt("bno");
+                String bcontent = rs.getString("bcontent");
+                String bwriter = rs.getString("bwriter");
+                String bdate = rs.getString("bdate");
                 // DTO 만들기
-                BoardDto boardDto = new BoardDto( bno, bcontent, bwriter, bdate ); // DTO 객체 만들기
+                BoardDto boardDto = new BoardDto(bno, bcontent, bwriter, bdate); // DTO 객체 만들기
                 // 리스트(배열)저장
-                boards.add( boardDto ); // 리스트(배열)에 생성한 DTO(레코드) 저장
+                boards.add(boardDto); // 리스트(배열)에 생성한 DTO(레코드) 저장
             }// w end
-        }catch (SQLException e){System.out.println("[시스템오류] sql문법 문제 발생 " + e);
+        } catch (SQLException e) {
+            System.out.println("[시스템오류] sql문법 문제 발생 " + e);
             return boards; // 리스트(배열) 반환한다.
-    }// m end
-}// class end
+        }// m end
+        return boards;
+    }// class end
+}
