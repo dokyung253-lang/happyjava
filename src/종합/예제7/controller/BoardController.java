@@ -14,6 +14,12 @@ public class BoardController {
         return result;
     }
 
+    // [3] 게시물 수정 controller
+    public boolean update(int bno, String bcontent){
+        boolean result = bd.update(bno, bcontent);
+        return result;
+    }
+
     // [4] 게시물 삭제 controller
     public boolean delete( int bno ){
         boolean result = bd.delete( bno);

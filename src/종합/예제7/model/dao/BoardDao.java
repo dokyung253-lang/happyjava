@@ -84,4 +84,24 @@ public class BoardDao {
         }
         return false; // 실패
     }
+
+    // [4] 게시물 수정 dao
+    public boolean update(int bno, String bcontent) {
+        try {
+            String sql = "update board set bcontent = ? where bno = ?"; // 1] SQL 작성
+            PreparedStatement ps = conn.prepareStatement(sql); // 2] SQL 기재
+            ps.setString(1, bcontent); // 3] SQL 매개변수
+            ps.setInt(2, bno);
+            int count = ps.executeUpdate(); // 4] SQL 실행
+            if (count == 1) {
+                return true;
+            } // 5] 결과 : 1개 레코드가 수정했다면 성공
+            else {
+                return false;
+            } // 실패
+        } catch (SQLException e) {
+            System.out.println("[시스템오류] SQL 문법 오류 발생" + e);
+        }
+        return false;
+    }// m end
 }// class end
