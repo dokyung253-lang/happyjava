@@ -7,4 +7,16 @@ public class BoardController {
     private static final BoardController instance = new BoardController(); // 현재 객체를 new instance 생성
     public static BoardController getInstance(){return instance;}
     private BoardDao bd = BoardDao.getInstance();
-}
+
+    // [1] 게시물 등록 controller
+    public boolean write( String bcontent, String bwriter ) {
+        boolean result = bd.write(bcontent, bwriter);
+        return result;
+    }
+
+    // [4] 게시물 삭제 controller
+    public boolean delete( int bno ){
+        boolean result = bd.delete( bno);
+        return result;
+    }
+} // class end
