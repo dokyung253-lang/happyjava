@@ -79,15 +79,11 @@ public class BoardView {
     }
 
     // [4] 게시물 삭제 view
-    public void delete() {
-        System.out.println("삭제할 게시물번호 : ");
-        int bno = scan.nextInt();
+    public void delete(){
+        System.out.print("삭제할 게시물번호 : ");       int bno = scan.nextInt();
         boolean result = bc.delete(bno);
-        if (result) {
-            System.out.println("[안내] 게시물 삭제 완료");
-        } else {
-            System.out.println("[경고] 게시물 삭제 불가");
-        }
+        if (result) {System.out.println("[안내] 게시물 삭제 완료");}
+        else {System.out.println("[경고] 게시물 삭제 불가");}
 
     }
 }// c end

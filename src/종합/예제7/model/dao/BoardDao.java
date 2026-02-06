@@ -60,6 +60,24 @@ public class BoardDao {
         return false; // 아니면 실패
     } // f end
 
+    // [4] 게시물 삭제 dao
+    public boolean delete( int bno ){
+        try {
+            // 1] SQL 작성한다, ? 는 매개변수 값이 들어갈 자리
+            String sql = "delete from board where bno = ? ";
+            // 2] 연동된[conn]인터페이스에 SQL 기재한다. +일반예외
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3] ?와일드카드에 매개변수 대입 , ps.setXXX( ?순서번호 , 값 );
+            ps.setInt( 1 , bno );
+            // 4] SQL 실행 한다. , 실행후 반영된 레코드 수
+            int count = ps.executeUpdate();
+            // 5] 결과
+            if( count == 1 ){ return true; } // 삭제된 레코드수 1개 이면 성공
+            else{ return false; } // 실패
+        }catch ( SQLException e ){ System.out.println("[시스템오류] SQL 문법 문제 발생 : "+ e ); }
+        return false; // 실패
+    }
+
 
     // [3] 게시물 수정 dao
     public boolean update(int bno, String bcontent) {

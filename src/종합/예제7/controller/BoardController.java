@@ -31,7 +31,7 @@ public class BoardController {
 
     // [4] 게시물 삭제 controller
     public boolean delete( int bno ){
-        boolean result = bd.delete( bno);
+        boolean result = bd.delete( bno );
         return result;
     }
 
