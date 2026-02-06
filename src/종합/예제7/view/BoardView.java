@@ -1,7 +1,9 @@
 package 종합.예제7.view;
 
 import 종합.예제7.controller.BoardController;
+import 종합.예제7.model.dto.BoardDto;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -29,7 +31,7 @@ public class BoardView {
                 int ch = scan.nextInt();
                 if (ch == 1) {
                     write();
-                } else if (ch == 2) {
+                } else if (ch == 2) { findAll();
                 } else if (ch == 3) { update();
                 } else if (ch == 4) { delete();
                 } else {  System.out.println("[경고] 없는기능 번호입니다.");
@@ -55,6 +57,15 @@ public class BoardView {
             System.out.println("[안내] 게시물 등록 완료");
         } else {
             System.out.println("[경고] 게시물 등록 실패");
+        }
+    }
+
+    // [2] 게시물 전체조회 view
+    public void findAll(){
+        ArrayList<BoardDto> boards = bc.findAll();
+        for( BoardDto board : boards ){
+            System.out.printf("번호 : %d, 작성일 : %s, 작성자 : %s, 내용 : %s \n",
+                    board.getBno(), board.getBdate(), board.getBwriter(), board.getBcontent());
         }
     }
 

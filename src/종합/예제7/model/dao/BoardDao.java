@@ -3,10 +3,8 @@ package 종합.예제7.model.dao;
 
 import 종합.예제7.model.dto.BoardDto;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class BoardDao {
     private BoardDao() {
@@ -62,30 +60,8 @@ public class BoardDao {
         return false; // 아니면 실패
     } // f end
 
-    // [4] 게시물 삭제 dao
-    public boolean delete(int bno) {
-        try {// 1] SQL 작성한다, ? 는 매개변수가 들어갈 자리
-            String sql = "delete from board where bno = ?";
-            // 2] 연동된(Conn) 인터페이스에 SQL 기재한다.
-            PreparedStatement ps = conn.prepareStatement(sql);
-            // 3] ?와일드카드에 매개변수 대입, ps.setXXX( ? 순서번호, 값)
-            ps.setInt(1, bno);
-            // 4] SQL을 실행한다., 실행후 반영된 레코드 수
-            int count = ps.executeUpdate();
-            // 5] 결과
-            if (count == 1) {
-                return true;
-            } // 삭제된 레코드수 1개이면 성공
-            else {
-                return false;
-            } // 삭제
-        } catch (SQLException e) {
-            System.out.println("[시스템오류] SQL 문법 문제 발생 : " + e);
-        }
-        return false; // 실패
-    }
 
-    // [4] 게시물 수정 dao
+    // [3] 게시물 수정 dao
     public boolean update(int bno, String bcontent) {
         try {
             String sql = "update board set bcontent = ? where bno = ?"; // 1] SQL 작성
@@ -103,5 +79,28 @@ public class BoardDao {
             System.out.println("[시스템오류] SQL 문법 오류 발생" + e);
         }
         return false;
+    }
+
+    // [2] 게시물 전체 조회 dao
+    public ArrayList<BoardDao> findAll() {
+        ArratList<BoardDto> boards = new ArratList<>(); // 조회된 결과인 레코드(dto)들을 저장할 리스트/배열 선언
+        try {String sql = "select * from board"; // 1] sql 작성한다.
+            PreparedStatement ps = conn.prepareStatement(sql); // 2] sql 기재한다.
+            // 3] sql 매개변수 대입한다. ?가 없으므로 생략
+            ResultSet rs = executeQuery(); // 4] sql 실행 후 몇 개 조회했는지가 아닌 조회 결과 테이블 제어
+            // executeUpdate(): insert/update.delete vs executeQuery() : select only
+            // ResultSet: select 결과물을 제어하는 인터페이스,
+            // rs.next() : 조회 결과에서 다음레코드 1번 이동
+            while (rs.next()) { // while(논리){} 반복문, *레코드 1개씩 순회*
+                // rs.get타입명( 속성명 ) : 현재 레코드의 속성값 호출
+                int bno = rs.getInt("bno"); int bcontent = rs.getString("bcontent");
+                String bwriter = re.getString("bwriter");  String bdate = rs.getString("bdate");
+                // DTO 만들기
+                BoardDto boardDto = new BoardDto( bno, bcontent, bwriter, bdate ); // DTO 객체 만들기
+                // 리스트(배열)저장
+                boards.add( boardDto ); // 리스트(배열)에 생성한 DTO(레코드) 저장
+            }// w end
+        }catch (SQLException e){System.out.println("[시스템오류] sql문법 문제 발생 " + e);
+            return boards; // 리스트(배열) 반환한다.
     }// m end
 }// class end
