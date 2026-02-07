@@ -17,12 +17,12 @@
 -- (1) 현재 DB 서버의 모든 데이터베이스 목록 확인
 -- show databases;
 -- (2) 현재 DB서버의 실제로컬 정보 확인
-show variables like ‘datadir’;
+-- show variables like ‘datarid’;
 -- (3) 현재 DB서버의 나만의 데이터베이스 생성
-create -- 생성 → database -- 데이터베이스 → mydb130; -- 데이터베이스 이름 정의 → ctrl + enter(생성)
+-- create -- 생성 → database -- 데이터베이스 → mydb130; -- 데이터베이스 이름 정의 → ctrl + enter(생성)
 create database mydb0130;
 -- (4) 현재 DB서버의 데이터베이스 삭제
-drop -- 삭제한다 → database -- 데이터베이스 → mydb130; -- 삭제할데이터베이스 이름
+-- drop -- 삭제한다 → database -- 데이터베이스 → mydb130; -- 삭제할데이터베이스 이름
 -- (4-2) 만약에 존재하면 삭제, 존재하지 않으면 삭제 안함*
 drop database if exists mydb0130;
 -- (5) 데이터베이스 활성화
