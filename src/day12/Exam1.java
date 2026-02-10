@@ -51,5 +51,23 @@ public class Exam1 { // class start
         System.out.println( o9.hashCode() ); // 1323165413
         System.out.println( o8.hashCode() ); // 1880587981
 
+        // [2] Class : 클래스 정보(멤버변수/ 메소드 등등) 담는 클래스
+        String obj1 = new String();
+        Class c1 = obj1.getClass();
+        System.out.println(c1); // class java.lang.String
+
+        Integer obj2 = 3;
+        Class c2 = obj2.getClass();
+        System.out.println(c2); //class java.lang.Integer
+
+        // 2-1) Class.forName("패키지명.클래스명" ); , 일반예외
+        // ** 리플렉션** : 최초 실행할 때(컴파일) 객체 생성하지 않고 실행 도중에 객체 생성 = 동적 처리
+        // 사용처 : JDBC(db연동), 스프링 프레임워크(자바 플랫폼)
+        try{Class.forName("java.lang.String");} // String 클래스가 존재하면 객체가 동적으로 생성된다.
+        catch( ClassNotFoundException e){}
+
+
+
+
     }// m end
 }// c end

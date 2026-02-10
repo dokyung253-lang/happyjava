@@ -28,7 +28,7 @@ public class BoardDao {
     // 3) 연동 함수 정의, dao에 생성자에서 함수 실행( dao 싱글톤이 생성되면서 db연동 실행 )
     private void connect() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // mysql 라이브러리 객체 메모리 할당/ 불러오기
+            Class.forName("com.mysql.cj.jdbc.Driver"); // mysql 라이브러리 객체 메모리 할당/Driver 객체 불러오기
             conn = DriverManager.getConnection(url, user, password); // mysql 구현체로 db 연동 후 연동 인터페이스에 반환
             System.out.println("[시스템준비] 데이터베이스 연동 성공");
         } catch (Exception e) {
