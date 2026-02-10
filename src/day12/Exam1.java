@@ -2,6 +2,10 @@ package day12;
 
 import 종합.예제7.model.dto.BoardDto;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class Exam1 { // class start
     public static void main(String[] args) { // main start
 
@@ -66,6 +70,32 @@ public class Exam1 { // class start
         try{Class.forName("java.lang.String");} // String 클래스가 존재하면 객체가 동적으로 생성된다.
         catch( ClassNotFoundException e){}
 
+        // 2-2)
+        Field[ ] fields = c1.getFields( ); // 클래스 내 모든 멤버변수/ 속성/ 필드명 확인( *private 제외)
+        for (int i =0; i < fields.length ; i++) {
+            System.out.println(fields[i]);
+        }
+        Constructor[] constructors = c1.getConstructors(); //클래스 내 모든 생성자 확인( 매개변수 확인 )
+        for( int i = 0; i< constructors.length; i++){
+            System.out.println( constructors[i]); // 15개, 오버로딩 이용한 다수의 생성자
+        }
+
+        Method[] methods = c1.getMethods(); // 클래스 내 모든 메소드 확인
+        for( int i = 0; i< methods.length; i++){
+            System.out.println(methods[i]);
+        }
+
+        // [3] 래퍼클래스 : 기본타입 --> 참조타입 표현, 장점 : 기본타입은 메소드(기능) 없다.
+        int value1 = 100; // 자료는 100, 분류/타입은 int(기본타입)
+        Integer value2 = 100; // 자료는 100, 분류/타입은 Integer(참조타입)
+        // System.out.println(value1.toString());
+        System.out.println(value2.toString()); // Integer 참조타입으로 기능(메소드)이 있다.
+        // 3-1 언박싱
+        int value3 = value2; // Integer -> int 언박싱 , 참조타입 -> 기본타입
+        Integer value4 = value1; // int -> Integer 오토박싱, 기본타입 -> 참조타입
+
+        // 자바에서 외부 자료들을 주고받을 때 타입변환(엑셀/ csv /공공데이터API / JS통신 / PYTHON통신)
+        int val1 = Integer.parseInt("100"); // "100" -> 100
 
 
 
