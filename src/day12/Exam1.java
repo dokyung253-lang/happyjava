@@ -96,6 +96,13 @@ public class Exam1 { // class start
 
         // 자바에서 외부 자료들을 주고받을 때 타입변환(엑셀/ csv /공공데이터API / JS통신 / PYTHON통신)
         int val1 = Integer.parseInt("100"); // "100" -> 100
+        double val2 = Double.parseDouble("3.14"); // "3.14 -> 3.14
+        Float val3 = Float.parseFloat("3.14"); // "3.14" -> 3.14
+        boolean val4 = Boolean.parseBoolean("true"); // "true" -> true
+        // 기본타입 -> 문자열 변환
+        String s1 = 100+""; // 기본타입자료+""        // 100 -> "100"
+        String s2 = String.valueOf(100);          // 100 -> "100"
+
 
 
 
