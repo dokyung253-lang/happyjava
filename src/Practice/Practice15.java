@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Practice15 {
     String str1 = new String("유재석");
     String str2 = new String("유재석");
+    {str2.equals(str2);}
+
 
     public static void main(String[] args) {
         Object o1 = new BookDto();
