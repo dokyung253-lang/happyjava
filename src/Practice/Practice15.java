@@ -2,11 +2,15 @@ package Practice;
 import java.util.Scanner;
 
 public class Practice15 {
+    String str1 = new String("유재석");
+    String str2 = new String("유재석");
+
     public static void main(String[] args) {
         Object o1 = new BookDto();
         Object o2 = new BoardDto();
 
         System.out.println(o1 + "|" + o2);
+}
 }
 /*[문제 1] BookDto는 toString()을 오버라이딩하지 않고 BoardDto는 toString()을 오버라이딩하도록 만든 뒤 Object 타입
 변수에 저장하여 두 객체를 하나의 출력문으로 출력했을 때 결과 차이가 나타나게 만드세요.
@@ -23,9 +27,7 @@ class BoardDto{
 /*[문제 2] new String("유재석")으로 생성한 두 객체의 == 와 equals() 비교 결과를 하나의 출력문으로 나타나게 만드세요.
 [출력예시]
 == 비교:false, equals 비교:true
-*/
-    Scanner scan = new Scanner(System.in);
-
+    */
 
 
 /*[문제 3] Class 리플렉션
@@ -62,4 +64,3 @@ int:100, double:3.14, str1:"100", str2:"100"
 
 현재:2025년 07월 25일 11:43:11 | +10일:2025-08-04T11:43:11 | -30일:2025-06-25T11:43:11
 */
-}
