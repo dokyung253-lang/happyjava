@@ -2,6 +2,7 @@ package day13;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.UUID;
 
 public class Exam3 {
     public static void main(String[] args) {
@@ -35,7 +36,18 @@ public class Exam3 {
         }
         System.out.println("code = " + code);
         // 활용처3 : 주사위/ 로또번호
-
         
+        // [2] UUID : 범용 고유 식별자,
+        String uuid = UUID.randomUUID().toString();
+        System.out.println("uuid = " + uuid);
+        /*
+             UUID
+                - 중복될 확률 거의 없다
+                - 랜덤기반 식별자
+             사용처
+                - 데이터베이스 Pk, 파일명, 로그인세션(Token) 등
+                    - (mysql) auto_increment : 1 2 3 4 5 순으로 증가하면 가볍고 노출이 쉽다.
+                    - UUID : 난수이므로 무겁고 노출이 어렵다. <보안>
+        */
     }
 }
