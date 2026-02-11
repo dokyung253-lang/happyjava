@@ -59,17 +59,43 @@ public class Exam2 {
         sql4.append(name);
         sql4.append( ")");
         String sql5 = "insert into table(name) values(?)";
+
             // 6) .charAt(인덱스), 문자열 내 지정한 인덱스 번호의 문자 1개 추출/반환
         char gender = "012345-1230123".charAt(7);
         System.out.println("gender = "+ gender); // 1
+
             // 7).length() : 문자열 내 문자 개수/ 길이 반환
         System.out.println("012345-1230123".length()); // 14
+
             // 8) .replace(기존문자, 새로운문자) : 문자열 내 기존문자가 존재하면 새로운문자로 치환하여 새로운 문자열 반환
         String str14 = "자바프로그래밍".replace("자바","JAVA");
         System.out.println("str14 = " + str14); // JAVA프로그래밍
         // 활용 : HTML (데이터수집 과정 정제/정리)
         String html = "<div>유재석</div> <br/><div>강호동</div> <br/>";
         System.out.println( html.replaceAll("<br/>", "\n")); // html 줄바꿈 ---> java 줄바꿈 치환
+
+            // 9) .substrin( 시작, [끝]) , 시작부터 끝 인덱스까지 문자열 추출/ 반환
+        String str15 = "012345-1230123".substring(0, 6);
+        System.out.println("str15 = " + str15); // 012345
+
+            // 10) .split("구분문자"), 구분문자 기준으로 잘라서 배열로 변환, 활용처 : 날짜/시간, csv, 데이터정리 등
+        String[] str16 = "012345-1230123".split("-");
+        System.out.println("str16[0] = " + str16[0]); // 012345
+        System.out.println("str16[1] = " + str16[1]); // 1230123
+
+            // 11) .indexOf("찾을문자"), 찾을문자가 존재하면 찾은인덱스번호 아니면 -1 반환, 활용처 : 검색,
+            // 12) .contains("찾을문자"), 찾을문자가 존재하면 true 아니면 false 반환
+        System.out.println("자바 프로그래밍 언어".indexOf("프로")); // 3[index]
+        System.out.println("자바 프로그래밍 언어".contains("프로")); // true
+
+            // 13) .getBytes(), 문자열을 byte배열[]로 반환/추출
+            // new String(문자열바이트), byte배열 --> 문자열 타입
+        byte[] str17 = "ABC".getBytes(); 
+        System.out.println( Arrays.toString(str17)); // [65, 66, 67]
+        String str18 = new String( str17 );
+        System.out.println("str18 = " + str18); // ABC
+
+
 
     }
 }
