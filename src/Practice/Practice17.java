@@ -1,5 +1,7 @@
 package Practice;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class Practice17 {
@@ -56,32 +58,53 @@ public class Practice17 {
             System.out.println("key +\":\"+ map.get(value) =" + key + ":" + map.get(key));
         } );
 
+    // [문제 7] 자바 외 다른 곳에서 데이터가 오는 경우 정리 - 데이터 전처리( 현재 상황에 맞게 데이터 수정)
+        Map<String, String> jsonMap = new HashMap<>();
+        String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
+        json = json.replace( "{", ""); // { } 제거, 문자열.replace( "기존문자", "새로운문자" ); // * 치환/수정 결과를 문자열에 대입한다.
+        json = json.replace("}", "");       System.out.println("json =" + json); // 확인
+
+        String[] jsonAry = json.split(",");// 문자열.split("기준문자") : 문자열내 "기준문자" 기준으로 분리하여 String[] 반복
+        for( int index = 0; index <= jsonAry.length -1; index++ ) { //  분리된 조각들을 하나씩 확인
+            String str = jsonAry[index];
+            System.out.println("str =" + str);
+            String[] strAry = str.split(":"); // : 기준 split(2개로만)
+            // 예] strAry[0] = "name", strAry[1] = "유재석", 즉] 0번 인덱스는 key(속성), 1번 인덱스 value(값)
+            // 큰따옴표" 제거, "" 큰따옴표 안에서 큰따옴표 표현할 때 이스케이프문자(제어문자) \" \n \t \\
+            jsonMap.put(strAry[0].replaceAll("\"", ""), strAry[1]);
+        }// for end
+        System.out.println("jsonMap ="+ jsonMap);
+        System.out.println("jsonAry.get(\"name\") = " + jsonMap.get("name"));
+        System.out.println("jsonAry.get(\"age\") = " + jsonMap.get("age"));
+        jsonMap.keySet().forEach((key) -> {
+            System.out.println("key +\":\" + jsonMap.get(value) =" + key +":"+ jsonMap.get(key));
+        });
+
+        //  [문제 8]
+        ArrayList<Map<String,Object>> stockList = new ArrayList<>();
+        // 주의 : new Dto 1개 == new Map 1개, .put 1개 == 속성 1개
+        Map< String, Object >map1 = new HashMap<>();
+        map1.put("name", "삼성전자");      map1.put("price" ,"72000");       map1.put("volume" , "1500000");
+        stockList.add( map1 );
+        Map< String, Object >map2 = new HashMap<>();
+        map2.put("name", "카카오");      map2.put("price" ,"52000");       map2.put("volume" , "800000");
+        stockList.add( map2 );
+        Map< String, Object >map3 = new HashMap<>();
+        map3.put("name", "네이버");      map3.put("price" ,"210000");       map3.put("volume" , "300000");
+        stockList.add( map3 );
+        System.out.println("stockList ="+ stockList);
+        stockList.forEach((stock) -> {
+            System.out.printf("종목명 : %s / 가격 : %s / 거래량 : %s \n" ,
+                    stock.get("name"), stock.get("price"), stock.get("volume"));
+        });
+        // 종목명 : 네이버 / 가격 : 210000 / 거래량 : 3000000
     } // m end
 }// c end
 
+    // [문제 1]
+        class Box<T>{ // < 제네릭타입 >이란? 클래스 작성 시 미리 타입 정하지 않고 인스턴스 생성 시 타입 정한다.
+        public T content;     // T: 영대문자 작성한다.
 
-/*[get 유재석] 67
-                [size] 4
-                [remove 후 map] {서장훈=100, 강호동=100, 신동엽=78}
-*/
-
-
-
-    // 문제 1
-    class Box<T>{ // < 제네릭타입 >이란? 클래스 작성 시 미리 타입 정하지 않고 인스턴스 생성 시 타입 정한다.
-    public T content;     // T: 영대문자 작성한다.
-
-
-    /*       요구사항(구현):
-                - Set<Integer> lottoSet = new HashSet<>();
-- draw 배열을 Set에 add하여 중복 제거
-- Set 전체 출력
-- size() 출력
-- contains(7) 출력
-        출력 예시(순서는 달라도 됨):
-                [추첨결과] [1,2,3,4,5,6,7,8,9,10]
-                [개수] 10
-                [contains 7] true*/
 
 }
 /*-------------------------------------------
@@ -186,10 +209,7 @@ String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
  - : 기준 split(2개로만)
  - 큰따옴표 " 제거
  - value도 전부 String으로 저장 (age도 "45")
-- 저장 후
- - map.get("name") 출력
- - map.get("age") 출력
- - keySet 반복문으로 key=value 전체 출력
+
 출력 예시(순서는 달라도 됨):
 [name] 유재석
 [age] 45
@@ -205,8 +225,8 @@ city=서울
 기존 DTO 개념 (참고):
 class StockDto {
     String name;
-    int price;
-    int volume;
+
+    int price;    int volume;
 }
 변경 목표: ArrayList<Map<String,Object>> 구조로 동일 데이터 표현
 요구사항(구현):
