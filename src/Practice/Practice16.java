@@ -5,6 +5,8 @@ import java.util.concurrent.Executors;
 
 public class Practice16 {
     public static void main(String[] args) {
+    }
+    }
 
 /* [문제 1] 배달 진행 + 화면 갱신 “동시 실행” 구현
         상황: 배달 진행(작업 스레드)과 주문 화면 갱신(메인 스레드)이 동시에 돌아야 한다.
@@ -72,7 +74,8 @@ public class Practice16 {
                 [처리완료] 문의 3
 
  */
-       // [1] 작업스레드 배정/만들기 , 3 = 3개 단위로 스레드가 실행됨
+
+/*       // [1] 작업스레드 배정/만들기 , 3 = 3개 단위로 스레드가 실행됨
         ExecutorService pool = Executors.newFixedThreadPool(3);
         // [2] 여러스레드를 만들어서 각 스레드들을 작업스레드풀에 등록하기
         for(int i = 1; i <= 10; i++){
@@ -100,3 +103,4 @@ public class Practice16 {
     }
 }
 class InquiryTask implements Runnable(){}
+*/
