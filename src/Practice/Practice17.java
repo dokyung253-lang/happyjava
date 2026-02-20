@@ -37,8 +37,7 @@ public class Practice17 {
         Map<String,Integer> map = new HashMap<>();
         map.put("유재석", 95); map.put("강호동", 100);   map.put("신동엽", 78);
         map.put("유재석", 67); map.put("서장훈", 100);
-
-        System.out.println(map.get("\"유재석\" =" + map.get()););
+        System.out.println("map.get(\"유재석\") =" + map.get("유재석") );
         System.out.println(map.size());
         System.out.println(map.remove("유재석"));
         System.out.println("map.size() =" + map.size());
@@ -57,7 +56,8 @@ public class Practice17 {
             System.out.println("key +\":\"+ map.get(value) =" + key + ":" + map.get(key));
         } );
 
-        }
+    } // m end
+}// c end
 
 
 /*[get 유재석] 67
@@ -66,10 +66,6 @@ public class Practice17 {
 */
 
 
-        // [문제 6]
-
-    } // m end
-}// c end
 
     // 문제 1
     class Box<T>{ // < 제네릭타입 >이란? 클래스 작성 시 미리 타입 정하지 않고 인스턴스 생성 시 타입 정한다.
